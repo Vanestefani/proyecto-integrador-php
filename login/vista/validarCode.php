@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
     }
-}
+}else{$resultado = array("estado" => "false");
+    return print(json_encode($resultado));
+    }
 
-$resultado = array("estado" => "false");
-return print(json_encode($resultado));
