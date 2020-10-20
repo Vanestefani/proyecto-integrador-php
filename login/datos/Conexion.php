@@ -12,7 +12,7 @@ class Conexion
     {
         try {
 
-            $cn = new PDO("sqlsrv:host=homeinmo.database.windows.net;dbname=home", "homeadmin", "Batman123");
+            $cn = new PDO("sqlsrv:server = tcp:homeinmo.database.windows.net,1433; Database = home", "homeadmin", "{Batman123}");
            
             
             return $cn;
