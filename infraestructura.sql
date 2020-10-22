@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2020 a las 01:46:56
+-- Tiempo de generación: 22-10-2020 a las 04:05:21
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.8
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `arriendo` (
   `Id` int(10) NOT NULL,
+  `arriendo` varchar(15) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'arriendo',
   `tipo` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `amueblados` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `habitaciones` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
@@ -41,22 +42,30 @@ CREATE TABLE `arriendo` (
   `pisos` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `num_contacto` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `titulo_anuncio` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `descripcion` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `fotos` blob NOT NULL,
+  `descripcion` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `ubicacion` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `precio` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `arriendo`
+--
+
+INSERT INTO `arriendo` (`Id`, `arriendo`, `tipo`, `amueblados`, `habitaciones`, `baños`, `metro_cuadrado`, `antiguedad`, `estrato`, `parqueadero`, `administracion`, `pisos`, `num_contacto`, `titulo_anuncio`, `descripcion`, `ubicacion`, `precio`) VALUES
+(1, 'arriendo', 'apartamento', 'si', '4', '3', '30 metros', '5', 3, 'no', 'no', '5', '5384853', 'casa en los altos', 'descripcion', 'lagos', 3000);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo_venta`
+-- Estructura de tabla para la tabla `cliente`
 --
 
-CREATE TABLE `tipo_venta` (
-  `Id` int(10) NOT NULL,
-  `venta` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `arriendo` varchar(30) COLLATE utf8_spanish_ci NOT NULL
+CREATE TABLE `cliente` (
+  `id` int(10) NOT NULL,
+  `nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `celular` varchar(11) COLLATE utf8_spanish_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `mensaje` varchar(100) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -71,17 +80,21 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `privilegio` int(2) NOT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp()
+  `privilegio` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `email`, `password`, `privilegio`, `fecha_registro`) VALUES
-(1, 'administrador', 'admin', 'admin@gmail.com', 'admin123', 1, '2020-08-18 03:59:20'),
-(9, 'nombre del usuario', 'usuario1', 'usuario@gmail.com', '123', 2, '2020-09-22 19:58:30');
+INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `email`, `password`, `privilegio`) VALUES
+(1, 'administrador', 'admin', 'admin@gmail.com', 'admin123', 1),
+(9, 'nombre del usuario', 'usuario1', 'usuario@gmail.com', '123', 2),
+(10, 'jose', 'ro@gmail.es', 'jose.carranza@usanjose.edu.co', '123', 2),
+(11, '', '', '', '', 2),
+(12, '', '', '', '', 2),
+(13, 'jose', 'jose', 'ro@gamail.com', '123', 2),
+(14, '', '', '', '', 2);
 
 -- --------------------------------------------------------
 
@@ -91,6 +104,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `email`, `password`, `privile
 
 CREATE TABLE `venta` (
   `Id` int(10) NOT NULL,
+  `venta` varchar(15) COLLATE utf8_spanish_ci NOT NULL DEFAULT '''venta''',
   `tipo` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `amueblados` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `habitaciones` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
@@ -103,8 +117,7 @@ CREATE TABLE `venta` (
   `pisos` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `num_contacto` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `titulo_anuncio` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `descripcion` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `fotos` blob NOT NULL,
+  `descripcion` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `ubicacion` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `precio` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -120,10 +133,10 @@ ALTER TABLE `arriendo`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indices de la tabla `tipo_venta`
+-- Indices de la tabla `cliente`
 --
-ALTER TABLE `tipo_venta`
-  ADD PRIMARY KEY (`Id`);
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -145,19 +158,19 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `arriendo`
 --
 ALTER TABLE `arriendo`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `tipo_venta`
+-- AUTO_INCREMENT de la tabla `cliente`
 --
-ALTER TABLE `tipo_venta`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `cliente`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
