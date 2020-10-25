@@ -48,7 +48,7 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
-                     <img class="d-block img-fluid img-baner" src="./img/Fondo.png" alt="First slide">
+                     <img class="d-block img-fluid img-baner" src="./img/fondo.png" alt="First slide">
                      <div class="carousel-caption d-none d-md-block">
                         <div class="banner-text">
                            <h2>Home.com</h2>
