@@ -1,3 +1,7 @@
+<?php
+require_once '../modelo/daoRegistroInmueble.php';
+require_once '../modelo/claseRegistroInmueble.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +17,7 @@
   <body>
     <?php include_once './narvarusu.php';?>
       
-            <h2 class="mx-auto" style="width: 200px;">Inmuebles</h2>
+            <h2 class="mx-auto" style="width: 200px;">INMUEBLES</h2>
             
             
             <!-- Button trigger modal -->
@@ -23,28 +27,30 @@
             <table class="table table-borderless">
               <thead>
                 
-                <th scope="col">tipo</th>
-                <th scope="col">ciudad</th>
-                <th scope="col">habitaciones</th>
-                <th scope="col">baños</th>
-                <th scope="col">ubicacion</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Habitaciones</th>
+                <th scope="col">Baños</th>
                 <th scope="col">Precio</th>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">apartamento</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>
-                  <td  type="button" class="btn-outline-success"><a href="vistaEditarProducto.php?ref=<?=$fila[0]?>">Editar</a></td>
-                  <td type="button" class="btn-outline-danger"><a href="../controlador/controlador.php?a=eliminar&ref=<?=$fila[0]?>" onclick="return confirm('¿Desea eliminar el registro?')">Eliminar</a></td>
-                  </td>
-                </tr>
-                
-              </tbody>
+              <?php foreach (daoRegistroInmueble::listarinmueble() as $fila): ?>
+            <tr>
+              <td><?=$fila[1]?></td>
+              <td><?=$fila[14]?></td>
+              <td><?=$fila[4]?></td>
+              <td><?=$fila[5]?></td>
+              <td><?=$fila[15]?></td>
+              
+              <td>
+                  <a href=""<button class="btn btn-outline-secondary">Descripcion</button>
+              </td>
+              <td>
+                  <button class="btn btn-outline-danger">Contacto</button>
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
             </table>
  
 </body>

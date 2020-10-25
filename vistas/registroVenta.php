@@ -17,6 +17,10 @@
                         <td >Tipo</td>
                         <td ><input type="text" name="tipo" size="35" placeholder="Casa o Apartamento"></td>
                     </tr>
+                     <tr>
+                        <td >Modo</td>
+                        <td ><input type="text" name="modo" size="35" placeholder="venta o Arriendo"></td>
+                    </tr>
                     <tr>
                         <td >Amueblado</td>
                         <td ><input type="text" name="amueblado" size="3" placeholder="si o no"></td>
@@ -52,23 +56,38 @@
                      <tr>
                         <td>Pisos</td>
                         <td ><input type="text" name="piso" size="35" placeholder="x pisos"></td>
-                    </tr> <tr>
-                        <td>Numero de Contacto</td>
-                        <td ><input type="text" name="contacto" size="35" placeholder="telefono o celular"></td>
-                    </tr> <tr>
+                    </tr> 
+                     <tr>
                         <td>Titulo Del Anuncio</td>
                         <td ><input type="text" name="anuncio" size="35" placeholder="Casa o apartamento en x Ciudad"></td>
-                    </tr> <tr>
+                    </tr>
+                    <tr>
                         <td>Descripcion</td>
                         <td ><input type="text" name="descripcion" size="40" placeholder="Detalles del inmueble"></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td>Ubicacion</td>
                         <td ><input type="text" name="ubicacion" size="40" placeholder="direccion del inmueble"></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td>precio del inmueble</td>
                         <td ><input type="text" name="precio" size="35" placeholder="x precio"></td>
+                    </tr> 
+                    <tr>
+                        <td>id propietario</td>
+                        <td>
+                            <select  name="propietario">
+                            <?php
+                            $con=new claseConexion();
+                            $producto=$con->ejecutarConsulta
+                            ("SELECT * FROM usuario");
+                            $con->cerrarConexion(); 
+                            ?>
+                            <?php foreach ($producto as $f): ?>
+                            <option value="<?=$f[0];?>"><?=$f[0];?></option>
+                            <?php endforeach ?>
+                            </select>
+                        </td>
                     </tr>
                 </tbody>
             </table>

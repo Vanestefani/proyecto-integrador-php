@@ -1,3 +1,7 @@
+<?php
+require_once '../modelo/daoRegistroInmueble.php';
+require_once '../modelo/claseRegistroInmueble.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,15 +32,17 @@
               <th scope="col">Titulo Anuncio</th>
               <th scope="col">Lugar</th>
               <th scope="col">Descripcion</th>
-              <th scope="col">Contacto</th>
             </tr>
           </thead>
+          
           <tbody>
+              <?php foreach (daoRegistroInmueble::listarinmueble() as $fila): ?>
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td><?=$fila[0]?></td>
+              <td><?=$fila[1]?></td>
+              <td><?=$fila[12]?></td>
+              <td><?=$fila[12]?></td>
+              <td><?=$fila[12]?></td>
               <td>
                   <button class="btn btn-outline-secondary">Descripcion</button>
               </td>
@@ -44,7 +50,7 @@
                   <button class="btn btn-outline-danger">Contacto</button>
               </td>
             </tr>
-            
+            <?php endforeach; ?>
           </tbody>
         </table>
             

@@ -20,9 +20,6 @@ setcookie("usuario", "user", time()/ - 1);
           <a class="nav-link" href="vistaProductos.php">PRODUCTOS</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="vistaClientes.php">CLIENTES</a>
-      </li>
-      <li class="nav-item">
           <a class="nav-link" href="#">Bienvenido: <?php echo $usu; ?></a>
       </li>
     </ul>

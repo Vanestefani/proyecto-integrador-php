@@ -12,7 +12,7 @@ class claseConexion {
         $this->servidor="localhost";
         $this->usuario="root";
         $this->clave="";
-        $this->basedatos="HOME";
+        $this->basedatos="home";
         
         $this->conexion= new mysqli($this->servidor, $this->usuario, 
                 $this->clave, $this->basedatos);
