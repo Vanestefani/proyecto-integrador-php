@@ -10,10 +10,10 @@
   </head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <body class="mx-auto" style="width: 200px;">
+  <body class="mx-auto" style="width: 200px;" background="../imagenes/1.jpg">
     <div class="container">
             <br>
-            <br><br><br>
+            <br>
            
             
             <h2>REGISTRO</h2>
@@ -24,8 +24,8 @@
                         <td><input type="text" required name="nombre"></td>
                     </tr>
                     <tr>
-                        <td><label>USUARIO</label></td>
-                        <td><input type="text" required name="usuario"></td>
+                        <td><label>CELULAR</label></td>
+                        <td><input type="text" required name="celular"></td>
                     </tr>
                     <tr>
                         <td><label>EMAIL</label></td>
@@ -36,7 +36,11 @@
                         <td><label>CONTRASEÑA</label></td>
                         <td><input type="password" required name="pass"></td>
                     </tr>
-                    
+                    <tr>
+                        <td><label>FOTO</label></td>
+                        <td><input type="file" required name="foto" id="seleccionArchivos" size="50"></td>
+                    <img id="imagenPrevisualizacion" width="150">
+                    </tr>
                 </table>
                 <br>
                 <br>

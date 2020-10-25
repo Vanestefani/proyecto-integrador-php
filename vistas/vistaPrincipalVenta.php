@@ -15,11 +15,10 @@
     <h2 class="mx-auto" style="width: 500px;">PUBLICACIONES EN VENTA</h2>
     
     <div><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
-              Nuevo Registro Vender
+              AGREGAR INMUEBLE
             </button>
       <?php include_once '../vistas/registroVenta.php';?></div>
     
-    <a class="btn btn-dark" href="vistaPrincipalArriendo.php" >ARRIENDO</a>
     <br>
             <table class="table table-borderless">
          <thead>
