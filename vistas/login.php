@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 <?php
    session_start();
    session_unset();
    session_destroy();
    ?>
+=======
+>>>>>>> ebf1fb50e877ed98a561a161d78c302d09cba2c0
 <!doctype html>
 <html lang="es">
    <head>

@@ -14,7 +14,7 @@
     <?php include_once './narvarusu.php';?>
     <h2 class="mx-auto" style="width: 500px;">PUBLICACIONES EN VENTA</h2>
     
-    <div><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+    <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
               AGREGAR INMUEBLE
             </button>
       <?php include_once '../vistas/registroVenta.php';?></div>

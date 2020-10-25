@@ -36,11 +36,7 @@
                         <td><label>CONTRASEÑA</label></td>
                         <td><input type="password" required name="pass"></td>
                     </tr>
-                    <tr>
-                        <td><label>FOTO</label></td>
-                        <td><input type="file" required name="foto" id="seleccionArchivos" size="50"></td>
-                    <img id="imagenPrevisualizacion" width="150">
-                    </tr>
+                    
                 </table>
                 <br>
                 <br>
