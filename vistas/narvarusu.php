@@ -1,6 +1,10 @@
 <?php 
 session_start();
 $usu=$_SESSION['user'];
+
+setcookie("usuario", "user", time()/ - 1);
+
+
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.php">HOME.COM</a>
@@ -21,13 +25,7 @@ $usu=$_SESSION['user'];
       <li class="nav-item">
           <a class="nav-link" href="#">Bienvenido: <?php echo $usu; ?></a>
       </li>
-
-      
-      
-      
-      
-      
     </ul>
   </div>
-            <button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button>
+            <a href="../vistas/destroy.php"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
 </nav>
