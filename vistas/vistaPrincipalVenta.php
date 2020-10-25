@@ -41,10 +41,17 @@ require_once '../modelo/claseRegistroInmueble.php';
               <td><?=$fila[0]?></td>
               <td><?=$fila[1]?></td>
               <td><?=$fila[12]?></td>
-              <td><?=$fila[12]?></td>
-              <td><?=$fila[12]?></td>
+              <td><?=$fila[14]?></td>
+              <td><?=$fila[13]?></td>
               <td>
-                  <button class="btn btn-outline-secondary">Descripcion</button>
+                  <!-- Button trigger modal -->
+              <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#modaldes">
+                Descripcion
+              </button>
+
+              <!-- Modal -->
+              <?php include_once '../vistas/modalDescripcion.php';?>
+                  
               </td>
               <td>
                   <button class="btn btn-outline-danger">Contacto</button>
