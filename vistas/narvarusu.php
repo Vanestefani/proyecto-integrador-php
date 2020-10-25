@@ -29,5 +29,5 @@ $usu=$_SESSION['user'];
       
     </ul>
   </div>
-            <button <?php session_destroy()?> <a href="../vistas/index.php"> type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button>
+            <button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button>
 </nav>
