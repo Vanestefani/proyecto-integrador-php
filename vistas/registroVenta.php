@@ -12,11 +12,17 @@
         
             <table class="table table-borderless ">
                 <tbody>
-                    
                     <tr>
-                        <td >Tipo</td>
-                        <td ><input type="text" name="tipo" size="35" placeholder="Casa o Apartamento"></td>
+                        <td>tipo</td>
+                        <td>
+                            <select name="tipo" required>
+                                
+                                <option value="apartamento" >Apartamento</option>
+                                <option value="casa">Casa</option>
+                </select>
+                        </td>
                     </tr>
+
                      <tr>
                         <td >Modo</td>
                         <td ><input type="text" name="modo" size="35" placeholder="venta o Arriendo"></td>
@@ -73,23 +79,7 @@
                         <td>precio del inmueble</td>
                         <td ><input type="text" name="precio" size="35" placeholder="x precio"></td>
                     </tr> 
-                    <tr>
-                        <td>id propietario</td>
-                        <td>
-                            <select  name="propietario">
-                            <?php
-                            $con=new claseConexion();
-                            $producto=$con->ejecutarConsulta
-                            ("SELECT * FROM usuario");
-                            $con->cerrarConexion(); 
-                            ?>
-                            <?php foreach ($producto as $f): ?>
-                            <option value="<?=$f[0];?>"><?=$f[0];?></option>
-                            <?php endforeach ?>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
+                                    </tbody>
             </table>
                             <td ><input type="submit" value="Ingresar" type="button" class="btn btn-primary"></td>
                             <td><a href="vistaProductos.php" type="button" class="btn btn-danger">Cancelar</a></td>

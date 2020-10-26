@@ -16,11 +16,14 @@ setcookie("usuario", "user", time()/ - 1);
       <li class="nav-item">
           <a class="nav-link" href="vistaPrincipalVenta.php">PUBLICACIONES</a>
       </li>
-        <li class="nav-item">
-          <a class="nav-link" href="vistaProductos.php">PRODUCTOS</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Bienvenido: <?php echo $usu; ?></a>
+        
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bienvenido: <?php echo $usu; ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="vistaProductos.php">inmuebles</a>
+        </div>
       </li>
     </ul>
   </div>

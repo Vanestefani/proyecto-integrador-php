@@ -27,6 +27,8 @@
                             <tr><td>Ubicacion</td><td><?=$fila[14]?></td></tr>
                             <tr><td>Precio</td><td><?=$fila[15]?></td></tr>
                             
+                           
+                            
                             
               <td>
                         </table>
