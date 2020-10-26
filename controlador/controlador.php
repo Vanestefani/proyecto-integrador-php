@@ -6,14 +6,14 @@
     require_once '../modelo/daoRegistroUsuario.php';
     require_once '../modelo/claseRegistroInmueble.php';
     require_once '../modelo/daoRegistroInmueble.php';
-    
-    
+
+
     switch($_GET['a']){
         case 'entrada':
             session_start();
             $usu=$_POST['usuario'];
             $pass=$_POST['pass'];
-            
+
             $l=new claseLogin();
             $u=$_POST['usuario'];
             $p=$_POST['pass'];
@@ -27,19 +27,19 @@
                 header("Location: ../vistas/login.php");
             }
             break;
-            
-            
+
+
         case 'registrar':
             $p=new claseRegistroUsuario();
             $p->setNombre($_POST['nombre']);
             $p->setCelular($_POST['celular']);
             $p->setEmail($_POST['email']);
             $p->setPassword($_POST['pass']);
-            $p->setFoto($_POST['foto']);
+
             daoRegistroUsuario::ingresarDato($p);
-            header('Location: ../vistas/login.php');
+
             break;
-        
+
         case 'ingresarventa':
             $p=new claseRegistroInmueble();
             $p->setIdInmueble($_POST['']);
@@ -62,7 +62,7 @@
             daoRegistroInmueble::ingresarInmueble($p);
             header('Location: ../vistas/vistaPrincipalVenta.php');
             break;
-        
+
         case '':
         break;
     }

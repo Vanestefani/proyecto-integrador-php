@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -85,17 +85,17 @@
                         <i class="ti-menu"></i>
                         <span>Categorias</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="shop.php">Casas - Venta</a></li>
-                            <li><a href="shop.php">Casa - Arriendo</a></li>
-                            <li><a href="shop.php">Apartamento - Venta</a></li>
-                            <li><a href="shop.php">Apartamento - Arriendo</a></li>
+                            <li class="active"><a href="inmuebles.php">Casas - Venta</a></li>
+                            <li><a href="inmuebles.php">Casa - Arriendo</a></li>
+                            <li><a href="inmuebles.php">Apartamento - Venta</a></li>
+                            <li><a href="inmuebles.php">Apartamento - Arriendo</a></li>
                         </ul>
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="active"><a href="./index.php">INICIO</a></li>
-                        <li><a href="./shop.php">TIENDA</a></li>
+                        <li><a href="./inmuebles.php">TIENDA</a></li>
                         
                         <li><a href="./blog.php">BLOG</a></li>
                         <li><a href="./contact.php">CONTACTENOS</a></li>
@@ -118,8 +118,8 @@
     
     <!-- Breadcrumb Section Begin -->
 
-    <!-- Product Shop Section Begin -->
-    <section class="product-shop spad page-details">
+    <!-- Product inmuebles Section Begin -->
+    <section class="product-inmuebles spad page-details">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -512,7 +512,7 @@
             </div>
         </div>
     </section>
-    <!-- Product Shop Section End -->
+    <!-- Product inmuebles Section End -->
 
     <!-- Related Products Section End -->
     <div class="related-products spad">
@@ -654,7 +654,7 @@
                         <h5>INFORMACION</h5>
                         <ul>
                             <li><a href="blog-details.php">QUIENES SOMOS </a></li>
-                            <li><a href="shop.php">TIENDA</a></li>
+                            <li><a href="inmuebles.php">TIENDA</a></li>
                             <li><a href="contact.php">CONTACTO</a></li>
                             <li><a href="blog.php">BLOG</a></li>
                         </ul>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>REGISTRO</title>
+    <title>Fashi | Template</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <?php $con =mysqli_connect("localhost" , "root" , "" , "infraestructura") or die (error);?>
 </head>
 
 <body>
@@ -31,7 +30,7 @@
         <div class="loader"></div>
     </div>
 
-   <!-- Header Section Begin -->
+    <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
             <div class="container">
@@ -48,7 +47,7 @@
                 <div class="ht-right">
                     <a href="login.php" class="login-panel"><i class="fa fa-user"></i>LOGIN</a>
                     <div class="lan-selector">
-                        
+
                     </div>
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
@@ -86,25 +85,25 @@
                         <i class="ti-menu"></i>
                         <span>Categorias</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="shop.php">Casas - Venta</a></li>
-                            <li><a href="shop.php">Casa - Arriendo</a></li>
-                            <li><a href="shop.php">Apartamento - Venta</a></li>
-                            <li><a href="shop.php">Apartamento - Arriendo</a></li>
+                            <li class="active"><a href="inmuebles.php">Casas - Venta</a></li>
+                            <li><a href="inmuebles.php">Casa - Arriendo</a></li>
+                            <li><a href="inmuebles.php">Apartamento - Venta</a></li>
+                            <li><a href="inmuebles.php">Apartamento - Arriendo</a></li>
                         </ul>
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="active"><a href="./index.php">INICIO</a></li>
-                        <li><a href="./shop.php">TIENDA</a></li>
-                        
+                        <li><a href="./inmuebles.php">TIENDA</a></li>
+
                         <li><a href="./blog.php">BLOG</a></li>
                         <li><a href="./contact.php">CONTACTENOS</a></li>
                         <li><a href="#">MAS</a>
                             <ul class="dropdown">
                                 <li><a href="./blog-details.php">QUIENES SOMOS</a></li>
                                 <li><a href="./faq.php">CALIFICANOS</a></li>
-                                
+
                             </ul>
                         </li>
                     </ul>
@@ -116,77 +115,122 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Section Begin -->
-    
-    <!-- Breadcrumb Form Section Begin -->
-
-    <!-- Register Section Begin -->
-    <div class="register-login-section spad">
+    <div class="breacrumb-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="register-form">
-                        <h2>REGISTRO</h2>
-                        <form method="post" action="register.php" >
-                            <div class="group-input">
-                                <label >NOMBRE</label>
-                                <input type="text" name="nombre" placeholder="Escriba su nombre">
-                            </div>
-                            <div class="group-input">
-                                <label >APERLLIDO</label>
-                                <input type="text" name="apellido" placeholder="Escriba su apellido">
-                            </div>
-                            <div class="group-input">
-                                <label >CORREO</label>
-                                <input type="text" name="correo" placeholder="Escriba su correo">
-                            </div>
-                            <div class="group-input">
-                                <label >CONTRASEÑA</label>
-                                <input type="password" name="contraseña" placeholder="Escriba su contraseña">
-                            </div>
-                            <div class="group-input">
-                                <label >USUARIO</label>
-                                <input type="text" name="usuario" placeholder="Escriba su usuario" >
-                            </div>
-                            <div class="group-input">
-                                <label >TELEFONO</label>
-                                <input type="text" name="telefono" placeholder="Escriba su usuario">
-                            </div>
-                            
-                            
-                            <button type="submit"  name="insert" value="insertar datos" class="site-btn register-btn">REGISTRARME</button>
-                        </form>
-                        <?php 
-        if (isset($_POST['insert'])) {
-	$nombre = $_POST['nombre'];
-	$apellido = $_POST['apellido'];
-	$correo = $_POST['correo'];
-	$contraseña = $_POST['contraseña'];
-	$usuario = $_POST['usuario'];
-	$telefono = $_POST['telefono'];
-
-	$insertar = "INSERT INTO registro ( nombre , apellido , correo , contraseña , usuario , telefono) VALUES ('$nombre' , '$apellido' , '$correo' , '$contraseña' , '$usuario' , '$telefono')";		
-    
-        $ejecutar = mysqli_query( $con , $insertar);
-
-	if ($ejecutar) {
-		echo "<h3>insertado correctamente</h3>";
-	}
-        }	
-        ?>
-                        
-                        <div class="switch-login">
-                            <a href="./login.php" class="or-login">LOGIN</a>
-                        </div>
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text product-more">
+                        <a href="./home.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./inmuebles.html">inmuebles</a>
+                        <span>inmueblesping Cart</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- Register Form Section End -->
-    
+    <!-- Breadcrumb Section Begin -->
+
+    <!-- inmueblesping Cart Section Begin -->
+    <section class="inmueblesping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cart-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th class="p-name">Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th><i class="ti-close"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="cart-pic first-row"><img src="img/cart-page/product-1.jpg" alt=""></td>
+                                    <td class="cart-title first-row">
+                                        <h5>Pure Pineapple</h5>
+                                    </td>
+                                    <td class="p-price first-row">$60.00</td>
+                                    <td class="qua-col first-row">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="total-price first-row">$60.00</td>
+                                    <td class="close-td first-row"><i class="ti-close"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="cart-pic"><img src="img/cart-page/product-2.jpg" alt=""></td>
+                                    <td class="cart-title">
+                                        <h5>American lobster</h5>
+                                    </td>
+                                    <td class="p-price">$60.00</td>
+                                    <td class="qua-col">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="total-price">$60.00</td>
+                                    <td class="close-td"><i class="ti-close"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="cart-pic"><img src="img/cart-page/product-3.jpg" alt=""></td>
+                                    <td class="cart-title">
+                                        <h5>Guangzhou sweater</h5>
+                                    </td>
+                                    <td class="p-price">$60.00</td>
+                                    <td class="qua-col">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="total-price">$60.00</td>
+                                    <td class="close-td"><i class="ti-close"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="cart-buttons">
+                                <a href="#" class="primary-btn continue-inmuebles">Continue inmueblesping</a>
+                                <a href="#" class="primary-btn up-cart">Update cart</a>
+                            </div>
+                            <div class="discount-coupon">
+                                <h6>Discount Codes</h6>
+                                <form action="#" class="coupon-form">
+                                    <input type="text" placeholder="Enter your codes">
+                                    <button type="submit" class="site-btn coupon-btn">Apply</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 offset-lg-4">
+                            <div class="proceed-checkout">
+                                <ul>
+                                    <li class="subtotal">Subtotal <span>$240.00</span></li>
+                                    <li class="cart-total">Total <span>$240.00</span></li>
+                                </ul>
+                                <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- inmueblesping Cart Section End -->
+
     <!-- Partner Logo Section Begin -->
-    
+
     <!-- Partner Logo Section End -->
 
     <!-- Footer Section Begin -->
@@ -203,7 +247,7 @@
                             <li>Telefono : 3138455078</li>
                             <li>HOME.COLOMBIA@gmail.com</li>
                         </ul>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1">
@@ -211,23 +255,14 @@
                         <h5>INFORMACION</h5>
                         <ul>
                             <li><a href="blog-details.php">QUIENES SOMOS </a></li>
-                            <li><a href="shop.php">TIENDA</a></li>
+                            <li><a href="inmuebles.php">TIENDA</a></li>
                             <li><a href="contact.php">CONTACTO</a></li>
                             <li><a href="blog.php">BLOG</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h5>CUENTA</h5>
-                        <ul>
-                            <li><a href="register.php">REGISTRO</a></li>
-                            <li><a href="login.php">LOGIN</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                
+
+
             </div>
         </div>
         <div class="copyright-reserved">
@@ -263,5 +298,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </body>
 
 </html>
-
-    
