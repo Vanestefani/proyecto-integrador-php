@@ -28,6 +28,7 @@
                             <tr><td>Precio</td><td><?=$fila[15]?></td></tr>
                             
                             
+                            
               <td>
                         </table>
                     </div>

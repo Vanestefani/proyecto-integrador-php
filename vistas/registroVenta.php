@@ -73,23 +73,7 @@
                         <td>precio del inmueble</td>
                         <td ><input type="text" name="precio" size="35" placeholder="x precio"></td>
                     </tr> 
-                    <tr>
-                        <td>id propietario</td>
-                        <td>
-                            <select  name="propietario">
-                            <?php
-                            $con=new claseConexion();
-                            $producto=$con->ejecutarConsulta
-                            ("SELECT * FROM usuario");
-                            $con->cerrarConexion(); 
-                            ?>
-                            <?php foreach ($producto as $f): ?>
-                            <option value="<?=$f[0];?>"><?=$f[0];?></option>
-                            <?php endforeach ?>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
+                                    </tbody>
             </table>
                             <td ><input type="submit" value="Ingresar" type="button" class="btn btn-primary"></td>
                             <td><a href="vistaProductos.php" type="button" class="btn btn-danger">Cancelar</a></td>
