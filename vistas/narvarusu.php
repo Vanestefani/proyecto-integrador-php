@@ -27,5 +27,5 @@ setcookie("usuario", "user", time()/ - 1);
       </li>
     </ul>
   </div>
-            <a href="../vistas/destroy.php"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
+            <a href="../vistas/index.php"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
 </nav>
