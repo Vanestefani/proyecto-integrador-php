@@ -12,11 +12,17 @@
         
             <table class="table table-borderless ">
                 <tbody>
-                    
                     <tr>
-                        <td >Tipo</td>
-                        <td ><input type="text" name="tipo" size="35" placeholder="Casa o Apartamento"></td>
+                        <td>tipo</td>
+                        <td>
+                            <select name="tipo" required>
+                                
+                                <option value="apartamento" >Apartamento</option>
+                                <option value="casa">Casa</option>
+                </select>
+                        </td>
                     </tr>
+
                      <tr>
                         <td >Modo</td>
                         <td ><input type="text" name="modo" size="35" placeholder="venta o Arriendo"></td>
