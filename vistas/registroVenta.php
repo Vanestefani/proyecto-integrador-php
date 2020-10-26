@@ -25,43 +25,117 @@
 
                      <tr>
                         <td >Modo</td>
-                        <td ><input type="text" name="modo" size="35" placeholder="venta o Arriendo"></td>
+                        
+                        <td>
+                            <select name="modo" required>
+                                
+                                <option value="venta" >Venta</option>
+                                <option value="arriendo">Arriendo</option>
+                                
+                </select>
+                            </td>
                     </tr>
                     <tr>
                         <td >Amueblado</td>
-                        <td ><input type="text" name="amueblado" size="3" placeholder="si o no"></td>
+                       <td>
+                            <select name="amueblado" required>
+                                
+                                <option value="si" >Si</option>
+                                <option value="no">No</option>    
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td >Habitaciones</td>
-                        <td ><input type="text" name="habitaciones" size="35" placeholder="x habitaciones"></td>
+                        <td>
+                            <select name="habitaciones" required>
+                                
+                                <option value="1" >1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
 
                     </tr>
                     <tr>
                         <td>Baños</td>
-                        <td ><input type="text" name="baño" size="35" placeholder="x baños"></td>
+                       <td>
+                            <select name="baño" required>
+                                
+                                <option value="1" >1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
                     </tr>
                      <tr>
                         <td>Metro Cuadrado</td>
-                        <td ><input type="text" name="metro" size="35" placeholder=" x metros cuadrados"></td>
+                        <td ><input type="text" name="metro" size="35" placeholder=" X metros cuadrados"></td>
                     </tr>
                      <tr>
                         <td>Antiguedad</td>
-                        <td ><input type="text" name="antiguedad" size="35" placeholder="años de antiguedad"></td>
+                        <td ><input type="text" name="antiguedad" size="35" placeholder=" X años de antiguedad "></td>
+
                     </tr>
                      <tr>
                         <td>Estrato</td>
-                        <td ><input type="text" name="estrato" size="3" placeholder="1 al 7"></td>
+                        <td>
+                            <select name="estrato" required>
+                                
+                                <option value="1" >1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                
+                            </select>
+                        </td>
                     </tr>
                      <tr>
                         <td>Parqueadero</td>
-                        <td ><input type="text" name="parqueadero" size="3" placeholder="si o no"></td>
+                        <td>
+                            <select name="parqueadero" required>
+                                
+                                <option value="no" >no</option>
+                                <option value="si">si</option>
+                                
+                            </select>
+                        </td>
                     </tr> <tr>
                         <td>Administracion</td>
-                        <td ><input type="text" name="administracion" size="3" placeholder="si o no"></td>
+                            <td>
+                            <select name="administracion" required>
+                                
+                                <option value="no" >no</option>
+                                <option value="si">si</option>
+                                
+                            </select>
+                        </td>
                     </tr>
                      <tr>
                         <td>Pisos</td>
-                        <td ><input type="text" name="piso" size="35" placeholder="x pisos"></td>
+                        <td>
+                            <select name="piso" required>
+                                
+                                <option value="1 piso" >1 piso</option>
+                                <option value="2 pisos">2 pisos</option>
+                                <option value="3 pisos">3 pisos</option>
+                                <option value="4 pisos">4 pisos</option>
+                                <option value="5 pisos">5 pisos</option>
+                                <option value="6 pisos">6 pisos</option>
+                                
+                            </select>
+                        </td>
                     </tr> 
                      <tr>
                         <td>Titulo Del Anuncio</td>
