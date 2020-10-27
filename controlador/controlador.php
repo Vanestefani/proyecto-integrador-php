@@ -42,6 +42,20 @@
                 header("Location: ../vistas/registroUsuario.php");
             }
             break;
+            
+            case 'registraradmin':
+            $p=new claseRegistroUsuario();
+            $p->setNombre($_POST['usuario']);
+            $p->setCelular($_POST['celular']);
+            $p->setEmail($_POST['email']);
+            $p->setPassword($_POST['pass']);
+            daoRegistroUsuario::ingresarDato($p);
+            if (true) {
+                header("Location: ../vistas/vistaAdministrador.php");
+            }else{
+                echo "no se puedo hacer el registro";
+            }
+            break;
 
         case 'ingresarventa':
             $p=new claseRegistroInmueble();

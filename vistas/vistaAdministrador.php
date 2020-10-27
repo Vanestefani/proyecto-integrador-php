@@ -1,3 +1,7 @@
+<?php
+require_once '../modelo/claseRegistroUsuario.php';
+require_once '../modelo/daoRegistroUsuario.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,6 +19,13 @@
       
             <h2 class="mx-auto" style="width: 200px;">USUARIOS</h2>
             <br>
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  NUEVO USUARIO
+</button>
+
+<!-- Modal -->
+<?php include_once '../vistas/registrarUsuarioAdmin.php';?>
             
             <table class="table table-borderless">
               <thead>
@@ -33,18 +44,25 @@
                 </tr>
               </thead>
               <tbody>
+                  <?php foreach (daoRegistroUsuario::listarUsuario() as $fila): ?>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
+                  <td><?=$fila[0]?></td>
+                  <td><?=$fila[1]?></td>
+                  <td><?=$fila[2]?></td>
+                  <td><?=$fila[3]?></td>
+                  <td><?=$fila[4]?></td>
+                  <td><?=$fila[5]?></td>
+                  <td><?=$fila[6]?></td>
+                  <td><?=$fila[7]?></td>
+                  <td><?=$fila[8]?></td>
+                  <td><?=$fila[9]?></td>
+                  
                   <td>
                   <button type="button" class="btn btn-success">Editar</button>
                   <button type="button" class="btn btn-danger">Eliminar</button>
                   </td>
-                  
                 </tr>
+                <?php endforeach; ?>
               </tbody>
             </table>
  
