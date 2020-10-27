@@ -21,10 +21,15 @@
                 <tr>
                   <th scope="col">Id</th>
                   <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
+                  <th scope="col">Celular</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Contraseña</th>
-                  
+                  <th scope="col">Pass</th>
+                  <th scope="col">fecha Creacion</th>
+                  <th scope="col">Email</th>  
+                  <th scope="col">privilegio</th>
+                  <th scope="col">Foto</th>
+                  <th scope="col">Verificacion</th>
+                  <th scope="col">Modo</th>
                 </tr>
               </thead>
               <tbody>
