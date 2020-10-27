@@ -46,7 +46,13 @@ require_once '../modelo/claseRegistroInmueble.php';
                   <a href=""<button class="btn btn-outline-secondary">Descripcion</button>
               </td>
               <td>
-                  <button class="btn btn-outline-danger">Contacto</button>
+                  <button class="btn btn-outline-success">Contacto</button>
+              </td>
+              <td>
+                  <button class="btn btn-outline-info">Edita</button>
+              </td>
+              <td>
+                  <button class="btn btn-outline-danger">Eliminar</button>
               </td>
             </tr>
             <?php endforeach; ?>

@@ -16,8 +16,8 @@ require_once '../modelo/claseRegistroInmueble.php';
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <body>
     <?php include_once './narvarusu.php';?>
-    <h2 class="mx-auto" style="width: 500px;">INMUEBLES</h2>
-    
+    <h2 class="mx-auto" style="width: 200px;">INMUEBLES</h2>
+    <br>
     <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
               AGREGAR INMUEBLE
             </button>
