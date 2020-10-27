@@ -3,6 +3,7 @@
 class claseLogin {
     private $usuario;
     private $clave;
+    private $privilegio;
     
     function __construct() {
         
@@ -15,6 +16,10 @@ class claseLogin {
     function getClave() {
         return $this->clave;
     }
+    
+    function getPrivilegio() {
+        return $this->privilegio;
+    }
 
     function setUsuario($usuario) {
         $this->usuario = $usuario;
@@ -22,6 +27,10 @@ class claseLogin {
 
     function setClave($clave) {
         $this->clave = $clave;
+    }
+    
+    function setPrivilegio($privilegio) {
+        $this->privilegio = $privilegio;
     }
 
 }

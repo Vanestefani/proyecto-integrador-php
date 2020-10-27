@@ -20,15 +20,15 @@
             $l= daoClaseLogin::buscarPorUsuario($u);
             if ($l[4]==$p) {
                 session_start();
-                $_SESSION['user']=$u;
+                $_SESSION['user']=$u;   
                 header("Location: ../vistas/vistaPrincipalVenta.php");
-            }
+            }  
             else{
                 header("Location: ../vistas/login.php");
             }
             break;
-
-
+            
+            
         case 'registrar':
             $p=new claseRegistroUsuario();
             $p->setNombre($_POST['usuario']);
