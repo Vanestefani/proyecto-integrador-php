@@ -16,7 +16,7 @@ require_once '../modelo/claseRegistroInmueble.php';
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   <body>
     <?php include_once './narvarusu.php';?>
-    <h2 class="mx-auto" style="width: 500px;">PUBLICACIONES EN VENTA</h2>
+    <h2 class="mx-auto" style="width: 500px;">INMUEBLES</h2>
     
     <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
               AGREGAR INMUEBLE
@@ -29,9 +29,11 @@ require_once '../modelo/claseRegistroInmueble.php';
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Tipo</th>
+              <th scope="col">Modo</th>
               <th scope="col">Titulo Anuncio</th>
               <th scope="col">Lugar</th>
-              <th scope="col">Descripcion</th>
+              <th scope="col">Precio</th>
+              
             </tr>
           </thead>
           
@@ -40,9 +42,11 @@ require_once '../modelo/claseRegistroInmueble.php';
             <tr>
               <td><?=$fila[0]?></td>
               <td><?=$fila[1]?></td>
+              <td><?=$fila[2]?></td>
               <td><?=$fila[12]?></td>
               <td><?=$fila[14]?></td>
-              <td><?=$fila[13]?></td>
+              <td><?=$fila[15]?></td>
+              
               <td>
                   <!-- Button trigger modal -->
               <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modaldes">
@@ -55,6 +59,12 @@ require_once '../modelo/claseRegistroInmueble.php';
               </td>
               <td>
                   <button class="btn btn-outline-success">Contactar</button>
+              </td>
+              <td>
+                  <button class="btn btn-outline-secondary">Editar</button>
+              </td>
+              <td>
+                  <button class="btn btn-outline-danger">Eliminar</button>
               </td>
             </tr>
             <?php endforeach; ?>

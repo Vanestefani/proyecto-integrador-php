@@ -24,6 +24,7 @@ require_once '../modelo/daoRegistroUsuario.php';
   NUEVO USUARIO
 </button>
 
+            <a href="vistaInmuebles.php" class="btn btn-success">INMUEBLES</a>
 <!-- Modal -->
 <?php include_once '../vistas/registrarUsuarioAdmin.php';?>
             
