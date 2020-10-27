@@ -20,11 +20,11 @@ require_once '../modelo/daoRegistroUsuario.php';
             <h2 class="mx-auto" style="width: 200px;">USUARIOS</h2>
             <br>
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
   NUEVO USUARIO
 </button>
 
-            <a href="vistaInmuebles.php" class="btn btn-success">INMUEBLES</a>
+            <a href="vistaInmuebles.php" class="btn btn-outline-success">INMUEBLES</a>
 <!-- Modal -->
 <?php include_once '../vistas/registrarUsuarioAdmin.php';?>
             
@@ -59,8 +59,8 @@ require_once '../modelo/daoRegistroUsuario.php';
                   <td><?=$fila[9]?></td>
                   
                   <td>
-                  <button type="button" class="btn btn-success">Editar</button>
-                  <button type="button" class="btn btn-danger">Eliminar</button>
+                  <button type="button" class="btn btn-outline-info">Editar</button>
+                  <button type="button" class="btn btn-outline-danger">Eliminar</button>
                   </td>
                 </tr>
                 <?php endforeach; ?>

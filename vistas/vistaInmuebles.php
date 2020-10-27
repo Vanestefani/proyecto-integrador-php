@@ -22,7 +22,7 @@ require_once '../modelo/claseRegistroInmueble.php';
               AGREGAR INMUEBLE
             </button>
       <?php include_once '../vistas/registroVenta.php';?></div>
-    
+    <a href="vistaAdministrador.php" class="btn btn-outline-info">USUARIOS</a>
     <br>
             <table class="table table-borderless">
          <thead>
