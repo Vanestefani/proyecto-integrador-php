@@ -1,6 +1,10 @@
 <?php 
 session_start();
 $usu=$_SESSION['user'];
+
+setcookie("usuario", "user", time()/ - 1);
+
+
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.php">HOME.COM</a>
@@ -9,33 +13,20 @@ $usu=$_SESSION['user'];
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="vistaPrincipalVenta.php.php">PUBLICACIONES</a>
-      </li>
       <li class="nav-item">
-          <a class="nav-link" href="vistaProductos.php">PRODUCTOS</a>
+          <a class="nav-link" href="vistaPrincipalVenta.php">PUBLICACIONES</a>
       </li>
-      
-      <li class="nav-item">
-          <a class="nav-link" href="vistaClientes.php">CLIENTES</a>
+        
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bienvenido: <?php echo $usu; ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="vistaProductos.php">inmuebles</a>
+        </div>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Bienvenido a la inmoviliaria online: <?php echo $usu; ?></a>
-      </li>
-
-      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
-              Nuevo Registro Vender
-            </button>
-      
-      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
-              Nuevo Registro Arriendo
-            </button>
-
-            <!-- Modal -->
-            <?php include_once '../vistas/RegistroInmueble.php';?>
-      
     </ul>
   </div>
-            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button>
+            <a href="../vistas/index.php"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
 </nav>
 
