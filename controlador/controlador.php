@@ -28,7 +28,12 @@
             }
             break;
             
-            
+            case'':
+                session_start();
+                session_destroy();
+                header("Location: ../vistas/login.php");
+                exit();
+                break;
         case 'registrar':
             $p=new claseRegistroUsuario();
             $p->setNombre($_POST['usuario']);

@@ -1,6 +1,11 @@
 <?php
 require_once '../modelo/daoRegistroInmueble.php';
 require_once '../modelo/claseRegistroInmueble.php';
+session_start();
+$usu = $_SESSION['user'];
+if(!isset($usu)){
+    header("Location: login.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
