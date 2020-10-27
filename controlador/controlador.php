@@ -31,13 +31,16 @@
 
         case 'registrar':
             $p=new claseRegistroUsuario();
-            $p->setNombre($_POST['nombre']);
+            $p->setNombre($_POST['usuario']);
             $p->setCelular($_POST['celular']);
             $p->setEmail($_POST['email']);
             $p->setPassword($_POST['pass']);
-
             daoRegistroUsuario::ingresarDato($p);
-
+            if (true) {
+                header("Location: ../vistas/login.php");
+            }else{
+                header("Location: ../vistas/registroUsuario.php");
+            }
             break;
 
         case 'ingresarventa':

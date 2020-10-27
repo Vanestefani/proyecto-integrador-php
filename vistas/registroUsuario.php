@@ -26,7 +26,7 @@
                      <input class="form-control input_X" placeholder="Celular" type="text" required name="celular">
                   </div>
                      <div class="form-group">
-                        <input class="form-control input_X" placeholder="Email" type="text" required name="email">
+                         <input class="form-control input_X" placeholder="Email" type="email" required name="email">
                      </div>
                     <center>                     <div class="form-group">
                         <input class="form-control input_X" placeholder="Password" type="password" required name="pass">
