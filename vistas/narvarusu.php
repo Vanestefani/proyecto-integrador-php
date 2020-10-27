@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 $usu=$_SESSION['user'];
 
 setcookie("usuario", "user", time()/ - 1);
@@ -27,5 +27,5 @@ setcookie("usuario", "user", time()/ - 1);
       </li>
     </ul>
   </div>
-            <a href="../vistas/index.php"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
+            <a href="../controlador/controlador.php?a=salir"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
 </nav>

@@ -28,7 +28,7 @@
             }
             break;
             
-            case'':
+            case'salir':
                 session_start();
                 session_destroy();
                 header("Location: ../vistas/login.php");

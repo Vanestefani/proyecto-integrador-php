@@ -9,10 +9,10 @@ class claseConexion {
     private $conexion;
 
     public function __construct() {
-        $this->servidor="den1.mysql6.gear.host";
-        $this->usuario="proyectointe";
-        $this->clave="El9d!Jcr?7lq";
-        $this->basedatos="proyectointe";
+        $this->servidor="localhost";
+        $this->usuario="root";
+        $this->clave="";
+        $this->basedatos="home";
 
         $this->conexion= new mysqli($this->servidor, $this->usuario,
                 $this->clave, $this->basedatos);
