@@ -1,6 +1,10 @@
 <?php
 require_once '../modelo/claseRegistroUsuario.php';
 require_once '../modelo/daoRegistroUsuario.php';
+session_start();
+if (@!$_SESSION['user']) {
+    header("Location:login.php"); 
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,6 +29,7 @@ require_once '../modelo/daoRegistroUsuario.php';
 </button>
 
             <a href="vistaInmuebles.php" class="btn btn-outline-success">INMUEBLES</a>
+            <a href="dashboard/index.php" class="btn btn-outline-info">GRAFICAS</a>
 <!-- Modal -->
 <?php include_once '../vistas/registrarUsuarioAdmin.php';?>
             

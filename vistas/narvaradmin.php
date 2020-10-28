@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 $usu=$_SESSION['user'];
 
 setcookie("usuario", "user", time()/ - 1);
