@@ -23,13 +23,13 @@
                      </div>
                      <br/>
                      </center>
-
-                  </form>
-      </div>
-      <div class="modal-footer">
+<div class="modal-footer">
         <input type="submit" name="validar" value="Registrar" class="btn btn-primary">
         <a class="btn btn-danger" href="../vistas/vistaAdministrador.php">Volver</a>
       </div>
+                  </form>
+      </div>
+      
     </div>
   </div>
 </div>
