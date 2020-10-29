@@ -6,21 +6,25 @@
     require_once '../modelo/daoRegistroUsuario.php';
     require_once '../modelo/claseRegistroInmueble.php';
     require_once '../modelo/daoRegistroInmueble.php';
-
+    
 
     switch($_GET['a']){
         case 'entrada':
-            session_start();
+            
+            
             $usu=$_POST['usuario'];
             $pass=$_POST['pass'];
-
+            $privilegio=$_POST['privilegio'];
             $l=new claseLogin();
             $u=$_POST['usuario'];
             $p=$_POST['pass'];
+            $pr=$_POST['privilegio'];
             $l= daoClaseLogin::buscarPorUsuario($u);
             if ($l[4]==$p) {
                 session_start();
-                $_SESSION['user']=$u;   
+                 
+                $_SESSION['user']=$u;  
+                $_SESSION['privilegio']=$pr;  
                 header("Location: ../vistas/vistaPrincipalVenta.php");
             }
             else{

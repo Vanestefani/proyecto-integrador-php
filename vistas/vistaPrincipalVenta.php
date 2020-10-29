@@ -1,8 +1,12 @@
 <?php
+require_once '../modelo/claseRegistroUsuario.php';
+require_once '../modelo/daoRegistroUsuario.php';
 require_once '../modelo/daoRegistroInmueble.php';
 require_once '../modelo/claseRegistroInmueble.php';
+
 session_start();
 $usu = $_SESSION['user'];
+$privilegio = $_SESSION['privilegio'];
 if(!isset($usu)){
     header("Location: login.php");
 }
@@ -28,7 +32,7 @@ if($varsesion==NULL || $varsesion = ''){
   <body>
     <?php include_once './narvarusu.php';?>
     <h2 class="mx-auto" style="width: 500px;">PUBLICACIONES EN VENTA</h2>
-    
+   
     <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
               AGREGAR INMUEBLE
             </button>
@@ -70,7 +74,7 @@ if($varsesion==NULL || $varsesion = ''){
             </tr>
             <?php endforeach; ?>
           </tbody>
-        </table>
+            </table>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

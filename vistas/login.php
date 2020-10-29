@@ -39,7 +39,7 @@
                   </center>
                </div>
                <div class="form-group">
-<a href="#">Olvide mi contraseña</a>
+               <a href="#">Olvide mi contraseña</a>
               </div>
             </form>
          </div>
