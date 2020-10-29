@@ -1,6 +1,13 @@
 <?php
 require_once '../modelo/daoRegistroInmueble.php';
 require_once '../modelo/claseRegistroInmueble.php';
+session_start();
+error_reporting(0);
+$varsesion = $_SESSION['user'];
+if($varsesion==NULL || $varsesion = ''){
+    echo 'usted no tiene autorizacion';
+    die();
+}
 ?>
 <!doctype html>
 <html lang="en">
