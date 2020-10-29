@@ -2,6 +2,12 @@
 require_once '../modelo/claseRegistroUsuario.php';
 require_once '../modelo/daoRegistroUsuario.php';
 session_start();
+error_reporting(0);
+$varsesion = $_SESSION['user'];
+if($varsesion==NULL || $varsesion = ''){
+    echo 'usted no tiene autorizacion';
+    die();
+}
 if (@!$_SESSION['user']) {
     header("Location:login.php"); 
 }

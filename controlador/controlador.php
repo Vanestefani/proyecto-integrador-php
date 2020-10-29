@@ -22,7 +22,7 @@
                 session_start();
                 $_SESSION['user']=$u;   
                 header("Location: ../vistas/vistaPrincipalVenta.php");
-            }  
+            }
             else{
                 header("Location: ../vistas/login.php");
             }

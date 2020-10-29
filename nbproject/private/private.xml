@@ -3,12 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/controlador/controlador.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/vistas/registroUsuario.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/modelo/daoRegistroUsuario.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/modelo/daoClaseLogin.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/vistas/login.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/modelo/claseRegistroUsuario.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/vistas/vistaProductos.php</file>
         </group>
     </open-files>
 </project-private>

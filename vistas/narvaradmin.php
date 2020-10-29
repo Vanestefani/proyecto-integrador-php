@@ -2,9 +2,6 @@
 
 $usu=$_SESSION['user'];
 
-setcookie("usuario", "user", time()/ - 1);
-
-
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.php">HOME.COM</a>
