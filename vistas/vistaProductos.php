@@ -1,6 +1,7 @@
 <?php
 require_once '../modelo/daoRegistroInmueble.php';
 require_once '../modelo/claseRegistroInmueble.php';
+$ref = daoRegistroInmueble::EditarDatos($_GET['ref']);
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['user'];
@@ -50,15 +51,27 @@ if($varsesion==NULL || $varsesion = ''){
               <td><?=$fila[15]?></td>
               
               <td>
-                  <a href=""<button class="btn btn-outline-secondary">Descripcion</button>
+                  <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modaldes">
+                Descripcion
+              </button>
+
+              <!-- Modal -->
+              <?php include_once '../vistas/modalDescripcion.php';?>
               </td>
+              
               <td>
                   <button class="btn btn-outline-success">Contacto</button>
               </td>
-              <td>
-                  <button class="btn btn-outline-info">Edita</button>
+              
+                
+                  <td><!-- Button trigger modal -->
+                      <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" <a href="modalEditarInmueble.php?ref=<?=$fila[0]?>"></a>
+                      Editar
+                    </button>
+                      <?php include_once '../vistas/modalEditarInmueble.php';?>
+                    </td>
               </td>
-              <td>
+               <td>
                   <button class="btn btn-outline-danger">Eliminar</button>
               </td>
             </tr>

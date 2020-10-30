@@ -18,6 +18,7 @@ class claseRegistroInmueble {
     private $ubicacion;
     private $precio;
     private $foto;
+    private $propietario;
     
     function __construct() {
         ;
@@ -90,6 +91,10 @@ class claseRegistroInmueble {
         return $this->foto;
     }
 
+    function getPropietario() {
+        return $this->propietario;
+    }
+
     function setIdInmueble($idInmueble) {
         $this->idInmueble = $idInmueble;
     }
@@ -157,6 +162,12 @@ class claseRegistroInmueble {
     function setFoto($foto) {
         $this->foto = $foto;
     }
+
+    function setPropietario($propietario) {
+        $this->propietario = $propietario;
+    }
+
+
 
 
 }

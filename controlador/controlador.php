@@ -87,7 +87,28 @@
             header('Location: ../vistas/vistaPrincipalVenta.php');
             break;
 
-        case '':
+        case 'editarInmueble':
+            $p=new claseRegistroInmueble();
+            $p->setIdInmueble($_POST['Id']);
+            $p->setTipoInmueble($_POST['inmueble']);
+            $p->setTipoOperacion($_POST['operacion']);
+            $p->setAmueblado($_POST['amueblado']);
+            $p->setHabitaciones($_POST['habitaciones']);
+            $p->setBaños($_POST['baños']);
+            $p->setMetroCuadrado($_POST['metro']);
+            $p->setAntiguedad($_POST['antiguedad']);
+            $p->setEstrato($_POST['estrato']);
+            $p->setParqueadero($_POST['parqueadero']);
+            $p->setAdministracion($_POST['administracion']);
+            $p->setPisos($_POST['pisos']);
+            $p->setTituloAnuncion($_POST['titulo']);
+            $p->setDescripcion($_POST['referencia']);
+            $p->setUbicacion($_POST['ubicacion']);
+            $p->setPrecio($_POST['precio']);
+            $p->setFoto($_POST['foto']);
+            
+            daoRegistroInmueble::EditarDatos($p);
+            header("Location: ../vistas/vistaProductos.php");
         break;
     }
 

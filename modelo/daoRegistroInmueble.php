@@ -38,4 +38,33 @@ class daoRegistroInmueble {
         $con->cerrarConexion();
         return $cont;
     }
+    public static function  EditarDatos($p){
+        $con=new claseConexion();
+        $sql="UPDATE `inmueble` SET `idInmueble`='".$p->getIdInmueble()."'"
+                . ",`tipo_inmueble`='".$p->getTipoInmueble()."'"
+                . ",`tipo_operacion`='".$p->getTipoOperacion()."'"
+                . ",`amueblado`='".$p->getAmueblado()."'"
+                . ",`habitaciones`='".$p->getHabitaciones()."'"
+                . ",`baños`='".$p->getBaños()."'"
+                . ",`metro_Cuadrado`='".$p->getMetroCuadrado()."'"
+                . ",`antiguedad`='".$p->getAntiguedad()."'"
+                . ",`estrato`='".$p->getEstrato()."')"
+                . ",`parqueadero`='".$p->getParqueadero()."'"
+                . ",`administracion`='".$p->getAdministracion()."'"
+                . ",`pisos`='".$p->getPisos()."'"
+                . ",`titulo_Anuncio`='".$p->getTituloAnuncion()."'"
+                . ",`descripcion`='".$p->getDescripcion()."')"
+                . ",`ubicacion`='".$p->getUbicacion()."'"
+                . ",`precio`='".$p->getPrecio()."'"
+                . ",`foto`='".$p->getFoto()."'"
+                . ",`propietario_id`=[] WHERE 1";
+        $con->ejecutarActualizacion($sql);
+        $con->cerrarConexion();
+    }
+    public static function EliminarInmueble($ref) {
+        $con=new claseConexion();
+        $sql="DELETE FROM `inmueble` WHERE idInmueble='".$ref."'";
+        $con->ejecutarActualizacion($sql);
+        $con->cerrarConexion();
+    }
 }
