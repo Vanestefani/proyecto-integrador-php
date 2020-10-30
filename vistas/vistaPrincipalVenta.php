@@ -3,10 +3,8 @@ require_once '../modelo/claseRegistroUsuario.php';
 require_once '../modelo/daoRegistroUsuario.php';
 require_once '../modelo/daoRegistroInmueble.php';
 require_once '../modelo/claseRegistroInmueble.php';
-
 session_start();
 $usu = $_SESSION['user'];
-$privilegio = $_SESSION['privilegio'];
 if(!isset($usu)){
     header("Location: login.php");
 }

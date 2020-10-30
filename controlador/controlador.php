@@ -11,10 +11,10 @@
     switch($_GET['a']){
         case 'entrada':
             
-            
+            $pr1=1;
+            $pr2=2;
             $usu=$_POST['usuario'];
             $pass=$_POST['pass'];
-            $privilegio=$_POST['privilegio'];
             $l=new claseLogin();
             $u=$_POST['usuario'];
             $p=$_POST['pass'];
@@ -22,9 +22,7 @@
             $l= daoClaseLogin::buscarPorUsuario($u);
             if ($l[4]==$p) {
                 session_start();
-                 
-                $_SESSION['user']=$u;  
-                $_SESSION['privilegio']=$pr;  
+                $_SESSION['user']=$u;    
                 header("Location: ../vistas/vistaPrincipalVenta.php");
             }
             else{
