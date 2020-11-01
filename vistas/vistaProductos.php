@@ -1,15 +1,4 @@
-<?php
-require_once '../modelo/daoRegistroInmueble.php';
-require_once '../modelo/claseRegistroInmueble.php';
-$ref = daoRegistroInmueble::EditarDatos($_GET['ref']);
-session_start();
-error_reporting(0);
-$varsesion = $_SESSION['user'];
-if($varsesion==NULL || $varsesion = ''){
-    echo 'usted no tiene autorizacion';
-    die();
-}
-?>
+<?php include_once '../vistas/session.php';?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -68,7 +57,10 @@ if($varsesion==NULL || $varsesion = ''){
                       <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" <a href="modalEditarInmueble.php?ref=<?=$fila[0]?>"></a>
                       Editar
                     </button>
-                      <?php include_once '../vistas/modalEditarInmueble.php';?>
+                      <?php// include_once '../vistas/modalEditarInmueble.php';?>
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="editarInmueble.php">Editar</a>
                     </td>
               </td>
                <td>
