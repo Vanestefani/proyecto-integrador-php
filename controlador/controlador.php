@@ -11,8 +11,6 @@
     switch($_GET['a']){
         case 'entrada':
             
-            $pr1=1;
-            $pr2=2;
             $usu=$_POST['usuario'];
             $pass=$_POST['pass'];
             $l=new claseLogin();
@@ -23,7 +21,7 @@
             if ($l[4]==$p) {
                 session_start();
                 $_SESSION['user']=$u;    
-                header("Location: ../vistas/vistaPrincipalVenta.php");
+                header("Location: ../vistas/vistaPrincipalVenta.php"); 
             }
             else{
                 header("Location: ../vistas/login.php");

@@ -23,7 +23,7 @@
          <center> <img  width="200px"src="./img/logo azul.png"></center>
             <h2 class="text-center"></h2>
             <br>
-            <form action="../controlador/controlador.php?a=entrada" method="post" enctype="multipart/form-data" class="login-form">
+            <form action="../controlador/controlador.php?a=entrada&entradaad" method="post" enctype="multipart/form-data" class="login-form">
                <div class="form-group">
                   <input class="form-control input_T" placeholder="Usuario" type="text" required name="usuario">
                </div>

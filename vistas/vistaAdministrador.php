@@ -6,6 +6,11 @@ require_once '../modelo/daoRegistroUsuario.php';
 session_start();
 $usu = $_SESSION['user'];
 $privilegio = $_SESSION['privilegio'];
+if ($pr=2) {
+    header("Location: login.php");
+} elseif ($pr=1) {
+    
+}
 if(!isset($usu)){
     header("Location: login.php");
 }
