@@ -1,3 +1,6 @@
+<?php
+session_start();
+$id = $_SESSION ['idUsuario']; ?>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -153,6 +156,7 @@
                         <td>precio del inmueble</td>
                         <td ><input type="text" name="precio" size="35" placeholder="x precio"></td>
                     </tr> 
+                <input id="propietario_id" name="propietario_id" type="hidden" value="<?= $id ?>">
                                     </tbody>
             </table>
                             <td ><input type="submit" value="Ingresar" type="button" class="btn btn-primary"></td>

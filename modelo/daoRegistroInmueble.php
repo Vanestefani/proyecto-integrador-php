@@ -1,7 +1,6 @@
 <?php
 require_once 'claseConexion.php';
 require_once 'claseRegistroInmueble.php';
-
 class daoRegistroInmueble {
     
     public static function ingresarInmueble($p) {
@@ -24,7 +23,7 @@ class daoRegistroInmueble {
                 . ",'".$p->getUbicacion()."'"
                 . ",'".$p->getPrecio()."'"
                 . ",''"
-                . ",'1')";
+                . ",'".$p->getPropietario()."')";
         
         
         $con->ejecutarActualizacion($sql);

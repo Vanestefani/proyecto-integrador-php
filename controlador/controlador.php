@@ -11,17 +11,21 @@
     switch($_GET['a']){
         case 'entrada':
             
-            $usu=$_POST['usuario'];
-            $pass=$_POST['pass'];
+            
             $l=new claseLogin();
             $u=$_POST['usuario'];
             $p=$_POST['pass'];
-            $pr=$_POST['privilegio'];
             $l= daoClaseLogin::buscarPorUsuario($u);
             if ($l[4]==$p) {
-                session_start();
-                $_SESSION['user']=$u;    
-                header("Location: ../vistas/vistaPrincipalVenta.php"); 
+               session_start();
+               $_SESSION['user']=$u;
+               $_SESSION['privilegio']=$l[6];
+               $_SESSION['idUsuario']=$l[0];
+               if ($l[6]==1) {
+                    header("Location: ../vistas/vistaAdministrador.php");
+                } else {
+                    header("Location: ../vistas/vistaPrincipalVenta.php");    
+                }      
             }
             else{
                 header("Location: ../vistas/login.php");
@@ -81,6 +85,7 @@
             $p->setUbicacion($_POST['ubicacion']);
             $p->setPrecio($_POST['precio']);
             //$p->setFoto($_POST['foto']);
+            $p->setPropietario('propietario_id');
             daoRegistroInmueble::ingresarInmueble($p);
             header('Location: ../vistas/vistaPrincipalVenta.php');
             break;
