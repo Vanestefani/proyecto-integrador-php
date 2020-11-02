@@ -38,7 +38,7 @@ if($varsesion==NULL || $varsesion = ''){
 </button>
 
             <a href="vistaInmuebles.php" class="btn btn-outline-success">INMUEBLES</a>
-            <a href="dashboard/index.php" class="btn btn-outline-info">GRAFICAS</a>
+            <a href="grafica/dist/index.php" class="btn btn-outline-info">GRAFICAS</a>
 <!-- Modal -->
 <?php include_once '../vistas/registrarUsuarioAdmin.php';?>
             
@@ -50,8 +50,7 @@ if($varsesion==NULL || $varsesion = ''){
                   <th scope="col">Celular</th>
                   <th scope="col">Email</th>
                   <th scope="col">Pass</th>
-                  <th scope="col">fecha Creacion</th>
-                  <th scope="col">Email</th>  
+                  <th scope="col">fecha Creacion</th> 
                   <th scope="col">privilegio</th>
                   <th scope="col">Foto</th>
                   <th scope="col">Verificacion</th>
