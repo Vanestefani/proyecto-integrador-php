@@ -13,7 +13,7 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.php">HOME.COM</a>
+            <a class="navbar-brand" href="../../vistaPrincipalVenta.php">HOME.COM</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             
@@ -52,12 +52,12 @@
                                 
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
+                            <div class="sb-sidenav-menu-heading">INMUEBLES</div>
+                            <a class="nav-link" href="charts.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
+                                VISTA INMIUEBLES
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="tables.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
@@ -72,10 +72,8 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
+                        <h1 class="mt-4">PRINCIPAL</h1>
+                        <br>
                         
                         <div class="row">
                             <div class="col-xl-6">
