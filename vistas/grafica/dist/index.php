@@ -52,20 +52,20 @@
                                 
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">GRAFICOS</div>
-                            <a class="nav-link" href="charts.php">
+                            <div class="sb-sidenav-menu-heading">ADMINISTRADOR</div>
+                            <a class="nav-link" href="../../vistaPrincipalVenta.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                VISTA INMIUEBLES
+                                VISTA INMUEBLES
                             </a>
-                            <a class="nav-link" href="tables.php">
+                            <a class="nav-link" href="../../vistaAdministrador.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
+                                VISTA USUARIOS
                             </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <div class="small">BIENVENIDO</div>
+                        HOME.COM
                     </div>
                 </nav>
             </div>
@@ -75,30 +75,11 @@
                         <h1 class="mt-4">PRINCIPAL</h1>
                         <br>
                         
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area mr-1"></i>
-                                        Area Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar mr-1"></i>
-                                        Bar Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                USUARIOS
+                                INMUEBLES
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
