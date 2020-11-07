@@ -32,7 +32,7 @@ if($varsesion==NULL || $varsesion = ''){
   <body class="mx-auto" style="" background="../imagenes/1.jpg">
     <?php include_once './narvaradmin.php';?>   
     <h2 class="mx-auto" style="width: 200px;">USUARIOS</h2>
-    <div class="container">
+    <div class="container-lg">
             <br>
     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
   NUEVO USUARIO
@@ -40,7 +40,8 @@ if($varsesion==NULL || $varsesion = ''){
 
             <a href="vistaInmuebles.php" class="btn btn-outline-success">INMUEBLES</a>
             <a href="grafica/dist/index.php" class="btn btn-outline-info">GRAFICAS</a>
-            <a href="grafica/dist/index.php" class="btn btn-outline-danger">REPORTE</a>
+            <a href="grafica/dist/index.php" class="btn btn-outline-warning">USUARIOS.PDF</a>
+            <a href="grafica/dist/index.php" class="btn btn-outline-danger">INMUEBLES.PDF</a>
             
 <!-- Modal -->
 <?php include_once '../vistas/registrarUsuarioAdmin.php';?>

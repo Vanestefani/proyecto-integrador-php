@@ -40,7 +40,7 @@ if($varsesion==NULL || $varsesion = ''){
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         
-                        <a class="dropdown-item" href="login.php">CERRAR SESION</a>
+                        <a class="dropdown-item" href="../../../controlador/controlador.php?a=salir">CERRAR SESION</a>
                     </div>
                 </li>
             </ul>

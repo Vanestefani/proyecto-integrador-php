@@ -96,6 +96,10 @@ if($varsesion==NULL || $varsesion = ''){
                         <h1 class="mt-4">INMUEBLES</h1>
                         
                         <button class="btn btn-outline-primary">REPORTE</button>
+                        <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
+              AGREGAR INMUEBLE
+            </button>
+      <?php include_once '../../../vistas/registroVenta.php';?></div>
                         <br>
                         <br>
                         <div class="card mb-4">
