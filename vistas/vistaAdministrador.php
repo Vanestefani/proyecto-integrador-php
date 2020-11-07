@@ -29,9 +29,10 @@ if($varsesion==NULL || $varsesion = ''){
   </head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <body>
-    <?php include_once './narvarusu.php';?>   
+  <body class="mx-auto" style="" background="../imagenes/1.jpg">
+    <?php include_once './narvaradmin.php';?>   
     <h2 class="mx-auto" style="width: 200px;">USUARIOS</h2>
+    <div class="container">
             <br>
     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
   NUEVO USUARIO
@@ -39,6 +40,8 @@ if($varsesion==NULL || $varsesion = ''){
 
             <a href="vistaInmuebles.php" class="btn btn-outline-success">INMUEBLES</a>
             <a href="grafica/dist/index.php" class="btn btn-outline-info">GRAFICAS</a>
+            <a href="grafica/dist/index.php" class="btn btn-outline-danger">REPORTE</a>
+            
 <!-- Modal -->
 <?php include_once '../vistas/registrarUsuarioAdmin.php';?>
             
@@ -50,11 +53,7 @@ if($varsesion==NULL || $varsesion = ''){
                   <th scope="col">Celular</th>
                   <th scope="col">Email</th>
                   <th scope="col">Pass</th>
-                  <th scope="col">fecha Creacion</th> 
-                  <th scope="col">privilegio</th>
-                  <th scope="col">Foto</th>
-                  <th scope="col">Verificacion</th>
-                  <th scope="col">Modo</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -65,11 +64,7 @@ if($varsesion==NULL || $varsesion = ''){
                   <td><?=$fila[2]?></td>
                   <td><?=$fila[3]?></td>
                   <td><?=$fila[4]?></td>
-                  <td><?=$fila[5]?></td>
-                  <td><?=$fila[6]?></td>
-                  <td><?=$fila[7]?></td>
-                  <td><?=$fila[8]?></td>
-                  <td><?=$fila[9]?></td>
+                  
                   
                   <td>
                   <button type="button" class="btn btn-outline-info">Editar</button>
@@ -79,6 +74,7 @@ if($varsesion==NULL || $varsesion = ''){
                 <?php endforeach; ?>
               </tbody>
             </table>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

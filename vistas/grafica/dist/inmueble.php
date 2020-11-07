@@ -1,3 +1,20 @@
+<?php
+require_once '../../../modelo/claseRegistroUsuario.php';
+require_once '../../../modelo/daoRegistroUsuario.php';
+require_once '../../../modelo/daoRegistroInmueble.php';
+require_once '../../../modelo/claseRegistroInmueble.php';
+session_start();
+$usu = $_SESSION['user'];
+if(!isset($usu)){
+    header("Location: login.php");
+}
+error_reporting(0);
+$varsesion = $_SESSION['user'];
+if($varsesion==NULL || $varsesion = ''){
+    echo 'usted no tiene autorizacion';
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,17 +25,19 @@
         <meta name="author" content="" />
         <title>INMUEBLES</title>
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.php">HOME.COM</a>
+            <a class="navbar-brand" href="../../vistaPrincipalVenta.php">HOME.COM</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
-           
+            
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                            </ul>
+                
+            </ul>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
@@ -74,39 +93,68 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">GRAFICAS</h1>
-                           
+                        <h1 class="mt-4">INMUEBLES</h1>
+                        
+                        <button class="btn btn-outline-primary">REPORTE</button>
+                        <br>
                         <br>
                         <div class="card mb-4">
                             <div class="card-header">
-                                <i class="fas fa-chart-area mr-1"></i>
-                                USUARIOS 
+                                <i class="fas fa-table mr-1"></i>
+                                INMUEBLE
                             </div>
-                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
-                                                    </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar mr-1"></i>
-                                        REGISTRO INMUEBLES
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-pie mr-1"></i>
-                                        Pie Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
-                                   
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>INMUEBLE</th>
+                                                <th>OPERACION</th>
+                                                <th>ANUNCIO</th>
+                                                <th>UBICACION</th>
+                                                <th>PRECIO</th>
+                                                <th>DESCRIPCION</th>
+                                                <th>CONTACTAR</th>
+                                                <th>ELIMINAR</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                             <?php foreach (daoRegistroInmueble::listarinmueble() as $fila): ?>
+                                            <tr>
+                                                <td><?=$fila[0]?></td>
+                                                <td><?=$fila[1]?></td>
+                                                <td><?=$fila[12]?></td>
+                                                <td><?=$fila[14]?></td>
+                                                <td><?=$fila[13]?></td>
+                                                <td><?=$fila[15]?></td>
+                                                <td>
+                                                    <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modaldes">
+                                                  Descripcion
+                                                </button>
+
+                                                <!-- Modal -->
+                                                <?php include_once '../../../vistas/modalDescripcion.php';?>
+
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-success">Contactar</button>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-danger">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
+                    
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
@@ -128,6 +176,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="assets/demo/chart-pie-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/datatables-demo.js"></script>
     </body>
 </html>
+

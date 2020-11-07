@@ -1,3 +1,20 @@
+<?php
+require_once '../../../modelo/claseRegistroUsuario.php';
+require_once '../../../modelo/daoRegistroUsuario.php';
+require_once '../../../modelo/daoRegistroInmueble.php';
+require_once '../../../modelo/claseRegistroInmueble.php';
+session_start();
+$usu = $_SESSION['user'];
+if(!isset($usu)){
+    header("Location: login.php");
+}
+error_reporting(0);
+$varsesion = $_SESSION['user'];
+if($varsesion==NULL || $varsesion = ''){
+    echo 'usted no tiene autorizacion';
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,7 +23,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>PRINCIPAL</title>
+        <title>INMUEBLES</title>
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -22,8 +39,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">CONFIGURACION</a>
-                        <div class="dropdown-divider"></div>
+                        
                         <a class="dropdown-item" href="login.php">CERRAR SESION</a>
                     </div>
                 </li>
@@ -39,12 +55,23 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 PRINCIPAL
                             </a>
-                            <div class="sb-sidenav-menu-heading">USUARIOS</div>
-                            
-                            
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-sidenav-menu-heading">GRAFICOS</div>
+                            <a class="nav-link collapsed" href="charts.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                INMUEBLES
+                                GRAFICO
+                               
+                            </a>
+                             <div class="sb-sidenav-menu-heading">USUARIOS</div>
+                            
+                            
+                             <a class="nav-link collapsed" href="inmueble.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                INMUEBLES   
+                               
+                            </a>
+                            <a class="nav-link collapsed" href="usuario.php"    >
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                USUARIOS
                                
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
@@ -74,43 +101,7 @@
                     <div class="container-fluid">
                         <h1 class="mt-4">PRINCIPAL</h1>
                         <br>
-                        
-                        
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                INMUEBLES
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>INMUEBLE</th>
-                                                <th>OPERACION</th>
-                                                <th>ANUNCIO</th>
-                                                <th>UBICACION</th>
-                                                <th>PRECIO</th>
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        <h2>BIENVENIDO ADMINISTRADOR</h2>
                     </div>
                     
                 </main>

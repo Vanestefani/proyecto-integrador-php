@@ -19,7 +19,7 @@
             
             <!-- Button trigger modal -->
             
-            
+            <div class="container">
             <br>
             <table class="table table-borderless">
               <thead>
@@ -52,15 +52,8 @@
                   <button class="btn btn-outline-success">Contacto</button>
               </td>
               
-                
-                  <td><!-- Button trigger modal -->
-                      <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" <a href="modalEditarInmueble.php?ref=<?=$fila[0]?>"></a>
-                      Editar
-                    </button>
-                      <?php// include_once '../vistas/modalEditarInmueble.php';?>
-                    </td>
                     <td>
-                        <a class="btn btn-info" href="editarInmueble.php">Editar</a>
+                        <a class="btn btn-outline-info" href="editarInmueble.php">Editar</a>
                     </td>
               </td>
                <td>
@@ -70,6 +63,7 @@
             <?php endforeach; ?>
           </tbody>
             </table>
+            </div>
  
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

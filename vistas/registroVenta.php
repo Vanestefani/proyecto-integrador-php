@@ -160,7 +160,7 @@ $id = $_SESSION ['idUsuario']; ?>
                                     </tbody>
             </table>
                             <td ><input type="submit" value="Ingresar" type="button" class="btn btn-primary"></td>
-                            <td><a href="vistaProductos.php" type="button" class="btn btn-danger">Cancelar</a></td>
+                            
         </form>
                   
                 </div>

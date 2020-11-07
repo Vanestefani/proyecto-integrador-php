@@ -2,9 +2,12 @@
 
 $usu=$_SESSION['user'];
 
+setcookie("usuario", "user", time()/ - 1);
+
+
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.php">HOME.COM</a>
+    <a class="navbar-brand" href="grafica/dist/index.php">HOME.COM</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -19,11 +22,11 @@ $usu=$_SESSION['user'];
           Bienvenido: <?php echo $usu; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="vistaProductos.php">inmuebles</a>
+          <a class="dropdown-item" href="vistaProductos.php">INMUEBLE</a>
+          <a class="dropdown-item" href="vistaAdministrador.php">ADMIN</a>
         </div>
       </li>
     </ul>
   </div>
-            <a href="../vistas/index.php"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
+            <a href="../controlador/controlador.php?a=salir"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
 </nav>
-

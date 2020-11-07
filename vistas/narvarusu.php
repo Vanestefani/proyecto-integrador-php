@@ -7,7 +7,7 @@ setcookie("usuario", "user", time()/ - 1);
 
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="grafica/dist/index.php">HOME.COM</a>
+    <a class="navbar-brand" href="#">HOME.COM</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -22,7 +22,8 @@ setcookie("usuario", "user", time()/ - 1);
           Bienvenido: <?php echo $usu; ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="vistaProductos.php">inmuebles</a>
+          <a class="dropdown-item" href="vistaProductos.php">INMUEBLE</a>
+          <a class="dropdown-item" href="vistaAdministrador.php">ADMIN</a>
         </div>
       </li>
     </ul>
