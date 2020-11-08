@@ -5,8 +5,8 @@ class daoRegistroInmueble {
     
     public static function ingresarInmueble($p) {
         $con=new claseConexion();
-        $sql="INSERT INTO `inmueble`(`idInmueble`, `tipo_inmueble`, `tipo_operacion`, `amueblado`, `habitaciones`, `baños`, `metro_Cuadrado`, `antiguedad`, `estrato`, `parqueadero`, `administracion`, `pisos`, `titulo_Anuncio`, `descripcion`, `ubicacion`, `precio`, `foto`, `propietario_id`) "
-        ."VALUES (''"
+        $sql="INSERT INTO `inmueble`(`idInmueble`, `tipo_inmueble`, `tipo_operacion`, `amueblado`, `habitaciones`, `baños`, `metro_Cuadrado`, `antiguedad`, `estrato`, `parqueadero`, `administracion`, `pisos`, `titulo_Anuncio`, `descripcion`, `ubicacion`, `precio`, `foto`, `propietario_id`)"
+                . " VALUES (''"
                 . ",'".$p->getTipoInmueble()."'"
                 . ",'".$p->getTipoOperacion()."'"
                 . ",'".$p->getAmueblado()."'"
@@ -22,8 +22,8 @@ class daoRegistroInmueble {
                 . ",'".$p->getDescripcion()."'"
                 . ",'".$p->getUbicacion()."'"
                 . ",'".$p->getPrecio()."'"
-                . ",'0'"
-                . ",'0')";
+                . ",''"
+                . ",'')";
         $con->ejecutarActualizacion($sql);
         $con->cerrarConexion();{
     }
