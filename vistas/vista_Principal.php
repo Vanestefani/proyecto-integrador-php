@@ -1,8 +1,8 @@
 <?php
-require_once '../../../modelo/claseRegistroUsuario.php';
-require_once '../../../modelo/daoRegistroUsuario.php';
-require_once '../../../modelo/daoRegistroInmueble.php';
-require_once '../../../modelo/claseRegistroInmueble.php';
+require_once '../modelo/claseRegistroUsuario.php';
+require_once '../modelo/daoRegistroUsuario.php';
+require_once '../modelo/daoRegistroInmueble.php';
+require_once '../modelo/claseRegistroInmueble.php';
 session_start();
 $usu = $_SESSION['user'];
 if(!isset($usu)){
@@ -30,13 +30,19 @@ if($varsesion==NULL || $varsesion = ''){
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="../../vistaPrincipalVenta.php">HOME.COM</a>
+            <a class="navbar-brand" href="#">HOME.COM</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                
+                <li class="nav-item dropdown">
+                    
+                    
+                        
+                        <a href="../controlador/controlador.php?a=salir"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
+                    
+                </li>
             </ul>
         </nav>
         <div id="layoutSidenav">
@@ -45,7 +51,7 @@ if($varsesion==NULL || $varsesion = ''){
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                            
-                            <a class="nav-link" href="index.php">
+                            <a class="nav-link" href="vista_Principal.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 PRINCIPAL
                             </a>
@@ -73,15 +79,8 @@ if($varsesion==NULL || $varsesion = ''){
                                 
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">ADMINISTRADOR</div>
-                            <a class="nav-link" href="../../vistaPrincipalVenta.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                VISTA INMUEBLES
-                            </a>
-                            <a class="nav-link" href="../../vistaAdministrador.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                VISTA USUARIOS
-                            </a>
+                            <div class="sb-sidenav-menu-heading"></div>
+                            
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -93,70 +92,9 @@ if($varsesion==NULL || $varsesion = ''){
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">INMUEBLES</h1>
-                        
-                        <button class="btn btn-outline-primary">REPORTE</button>
-                        <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
-              AGREGAR INMUEBLE
-            </button>
-      <?php include_once '../../../vistas/registroVenta.php';?></div>
+                        <h1 class="mt-4">PRINCIPAL</h1>
                         <br>
-                        <br>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                INMUEBLE
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>INMUEBLE</th>
-                                                <th>OPERACION</th>
-                                                <th>ANUNCIO</th>
-                                                <th>UBICACION</th>
-                                                <th>PRECIO</th>
-                                                <th>DESCRIPCION</th>
-                                                <th>CONTACTAR</th>
-                                                <th>ELIMINAR</th>
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody>
-                                             <?php foreach (daoRegistroInmueble::listarinmueble() as $fila): ?>
-                                            <tr>
-                                                <td><?=$fila[0]?></td>
-                                                <td><?=$fila[1]?></td>
-                                                <td><?=$fila[12]?></td>
-                                                <td><?=$fila[14]?></td>
-                                                <td><?=$fila[13]?></td>
-                                                <td><?=$fila[15]?></td>
-                                                <td>
-                                                    <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modaldes">
-                                                  Descripcion
-                                                </button>
-
-                                                <!-- Modal -->
-                                                <?php include_once '../../../vistas/modalDescripcion.php';?>
-
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-success">Contactar</button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-danger">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        <h2>Bienvenid@ : <?php echo $usu; ?> </h2>
                     </div>
                     
                 </main>
@@ -185,4 +123,3 @@ if($varsesion==NULL || $varsesion = ''){
         <script src="assets/demo/datatables-demo.js"></script>
     </body>
 </html>
-

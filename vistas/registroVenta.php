@@ -156,10 +156,10 @@ $id = $_SESSION ['idUsuario']; ?>
                         <td>precio del inmueble</td>
                         <td ><input type="text" name="precio" size="35" placeholder="x precio"></td>
                     </tr> 
-                <input id="propietario_id" name="propietario_id" type="hidden" value="<?= $id ?>">
+                
                                     </tbody>
             </table>
-                            <td ><input type="submit" value="Ingresar" type="button" class="btn btn-primary"></td>
+                     <td><input type="submit" value="Ingresar" type="button" class="btn btn-primary"></td>
                             
         </form>
                   

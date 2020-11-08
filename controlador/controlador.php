@@ -22,9 +22,9 @@
                $_SESSION['privilegio']=$l[6];
                $_SESSION['idUsuario']=$l[0];
                if ($l[6]==1) {
-                    header("Location: ../vistas/vistaAdministrador.php");
+                    header("Location: ../vistas/vista_Principal.php");
                 } else {
-                    header("Location: ../vistas/vistaPrincipalVenta.php");    
+                    header("Location: ../vistas/vista_Principal.php");    
                 }      
             }
             else{
@@ -61,7 +61,7 @@
             $p->setPassword($_POST['pass']);
             daoRegistroUsuario::ingresarDato($p);
             if (true) {
-                header("Location: ../vistas/vistaAdministrador.php");
+                header("Location: ../vistas/usuario.php");
             }else{
                 echo "no se puedo hacer el registro";
             }
@@ -69,7 +69,7 @@
 
         case 'ingresarventa':
             $p=new claseRegistroInmueble();
-            $p->setIdInmueble($_POST['']);
+           
             $p->setTipoInmueble($_POST['tipo']);
             $p->setTipoOperacion($_POST['modo']);
             $p->setAmueblado($_POST['amueblado']);
@@ -85,10 +85,8 @@
             $p->setDescripcion($_POST['descripcion']);
             $p->setUbicacion($_POST['ubicacion']);
             $p->setPrecio($_POST['precio']);
-            //$p->setFoto($_POST['foto']);
-            $p->setPropietario('propietario_id');
             daoRegistroInmueble::ingresarInmueble($p);
-            header('Location: ../vistas/vistaPrincipalVenta.php');
+            header('Location: ../vistas/inmueble.php');
             break;
 
         case 'editarInmueble':
