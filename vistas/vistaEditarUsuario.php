@@ -1,10 +1,14 @@
 <?php
 require_once '../modelo/claseRegistroUsuario.php';
 require_once '../modelo/daoRegistroUsuario.php';
-require_once '../modelo/daoRegistroInmueble.php';
-require_once '../modelo/claseRegistroInmueble.php';
+require_once '../modelo/claseConexion.php';
+$ref = daoRegistroUsuario::buscarPorReferencia($_GET['ref']);
 session_start();
+$pr = $_SESSION['privilegio'];
 $usu = $_SESSION['user'];
+if ($pr==2) {
+    header("Location: login.php");  
+}
 if(!isset($usu)){
     header("Location: login.php");
 }
@@ -23,7 +27,7 @@ if($varsesion==NULL || $varsesion = ''){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>INMUEBLES</title>
+        <title>EDITAR USUARIOS</title>
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -86,89 +90,49 @@ if($varsesion==NULL || $varsesion = ''){
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">INMUEBLES</h1>
-                        
-                       
-                        <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
-              AGREGAR INMUEBLE
-            </button>
-      <?php include_once '../vistas/registroVenta.php';?></div>
-                        <br>
-                       
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                INMUEBLE
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>INMUEBLE</th>
-                                                <th>OPERACION</th>
-                                                <th>ANUNCIO</th>
-                                                <th>UBICACION</th>
-                                                <th>PRECIO</th>
-                                                <th>DESCRIPCION</th>
-                                                <th>CONTACTAR</th>
-                                                <th>EDITAR</th>
-                                                <th>ELIMINAR</th>
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody>
-                                             <?php foreach (daoRegistroInmueble::listarinmueble() as $fila): ?>
-                                            <tr>
-                                                <td><?=$fila[0]?></td>
-                                                <td><?=$fila[1]?></td>
-                                                <td><?=$fila[12]?></td>
-                                                <td><?=$fila[14]?></td>
-                                                <td><?=$fila[13]?></td>
-                                                <td><?=$fila[15]?></td>
-                                                <td>
-                                                    <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modaldes">
-                                                  Descripcion
-                                                </button>
-
-                                                <!-- Modal -->
-                                                <?php include_once '../vistas/modalDescripcion.php';?>
-
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-success">Contactar</button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-info">Editar</button>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-outline-danger">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        <h1 class="mt-4">EDITAR USUARIO</h1>
+                        <form action="../controlador/controlador.php?a=editarusu" method="POST" enctype="multipart/form-data">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td><input type="text" name="id" size="15" value="<?=$ref[0]?>" readonly="readonly"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NOMBRE</td>
+                                        <td><input type="text" name="nombre" size="15" value="<?=$ref[1]?>" readonly="readonly"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CELULAR</td>
+                                        <td><input type="text" name="celular" size="15" value="<?=$ref[2]?>" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EMAIL</td>
+                                        <td><input type="text" name="email" size="15" value="<?=$ref[3]?>" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>pass</td>
+                                        <td><input type="text" name="pass" size="15" value="<?=$ref[4]?>" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PRIVILEGIO</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[6]?>"></td>
+                                    </tr>
+                                    <br>
+                                    <br>
+                                    <tr>
+                                        <td><input type="submit" value="Actualizar" type="button" class="btn btn-primary"></td>
+                                        <td><a href="usuario.php" type="button" class="btn btn-danger">Cerrar</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                                
                         </div>
-                        
                     </div>
                     
                 </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+                
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>

@@ -112,5 +112,16 @@
             daoRegistroInmueble::EditarDatos($p);
             header("Location: ../vistas/vistaProductos.php");
         break;
+    
+        case :'editarusu'
+            $p =new claseConexion();
+            $p->setNombre($_POST['nombre']);
+            $p->setCelular($_POST['celular']);
+            $p->setEmail($_POST['email']);
+            $p->setPassword($_POST['pass']);
+            $p->setPrivilegio($_POST['privilegio']);
+            daoRegistroUsuario::editardato($p);
+            header("Location: ../vistas/usuario.php");
+        break;
     }
 

@@ -106,14 +106,14 @@ if($varsesion==NULL || $varsesion = ''){
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Id</th>
-                                                <th scope="col">Nombre</th>
-                                                <th scope="col">Celular</th>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">NOMBRE</th>
+                                                <th scope="col">CELULAR</th>
                                                 <th scope="col">Email</th>
-                                                <th scope="col">Pass</th>
-                                                <th scope="col">fecha Creacion</th> 
-                                                <th scope="col">privilegio</th>
-                                                <th scope="col">accion</th>
+                                                <th scope="col">PASS</th>
+                                                <th scope="col">PRIVILEGIO</th>
+                                                <th scope="col">EDITAR</th>
+                                                <th scope="col">ELIMINAR</th>
                                                 
                                             </tr>
                                         </thead>
@@ -126,15 +126,11 @@ if($varsesion==NULL || $varsesion = ''){
                                                 <td><?=$fila[2]?></td>
                                                 <td><?=$fila[3]?></td>
                                                 <td><?=$fila[4]?></td>
-                                                <td><?=$fila[5]?></td>
                                                 <td><?=$fila[6]?></td>
                                                 
-                                                <td>
-                  
-                  <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                  </td>
-                </tr>
-                                            </tr>
+                                                <td><a type="button" class="btn btn-outline-info" href="vistaEditarUsuario.php?ref=<?=$fila[0]?>">Editar</a></td>
+                                                <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+                
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>

@@ -27,4 +27,27 @@ class daoRegistroUsuario {
         $con->cerrarConexion();
         return $cont;
     }
+    
+    public static function buscarPorReferencia ($ref){
+        $con=new claseConexion();
+        $sql="SELECT * FROM `usuario` WHERE idUsuario ='$ref'";
+        $cont=$con ->ejecutarConsulta($sql);
+        $con->cerrarConexion();
+        return $cont[0];
+    }
+    public static function editardato ($p){
+        $con = new claseConexion();
+        $sql "UPDATE `usuario` SET "
+                . "`idUsuario`=[value-1],"
+                . "`nombre`=[value-2],"
+                . "`celular`=[value-3],"
+                . "`email`=[value-4],"
+                . "`password`=[value-5],"
+                . "`fecha_creacion`=[value-6],"
+                . "`privilegio`=[value-7],"
+                . "`foto`=[value-8],"
+                . "`verificacion`=[value-9],"
+                . "`modo`=[value-10] "
+                . "WHERE 1";
+    }
 }
