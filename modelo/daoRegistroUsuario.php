@@ -38,8 +38,8 @@ class daoRegistroUsuario {
     public static function editardato ($p){
         $con = new claseConexion();
         $sql "UPDATE `usuario` SET "
-                . "`idUsuario`=[value-1],"
-                . "`nombre`=[value-2],"
+                . "`idUsuario`='',"
+                . "`nombre`='".$p->getNombre()."',"
                 . "`celular`=[value-3],"
                 . "`email`=[value-4],"
                 . "`password`=[value-5],"
