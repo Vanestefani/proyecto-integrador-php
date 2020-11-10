@@ -50,4 +50,10 @@ class daoRegistroUsuario {
                 . "`modo`='0' "
                 . "WHERE idUsuario='".$p->getIdUsuario()."'";
     }
+    public static function eliminarUsuario($ref){
+        $con= new claseConexion();
+        $sql="DELETE FROM `usuario` WHERE idUsuario='".$ref."'";
+        $con->ejecutarActualizacion($sql);
+        $con->cerrarConexion();
+    }
 }

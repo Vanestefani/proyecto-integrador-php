@@ -129,7 +129,7 @@ if($varsesion==NULL || $varsesion = ''){
                                                 <td><?=$fila[6]?></td>
                                                 
                                                 <td><a type="button" class="btn btn-outline-info" href="vistaEditarUsuario.php?ref=<?=$fila[0]?>">Editar</a></td>
-                                                <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+                                                <td><a type="button" class="btn btn-outline-danger" href="../controlador/controlador.php?a=eliminarusu&ref=<?=$fila[0]?>">Eliminar</a></td>
                 
                                             <?php endforeach; ?>
                                         </tbody>

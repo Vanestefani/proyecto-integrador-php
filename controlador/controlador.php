@@ -124,6 +124,11 @@
             daoRegistroUsuario::editardato($p);
             header("Location: ../vistas/usuario.php");
         break;
+    
+        case 'eliminarusu':
+            daoRegistroUsuario::eliminarUsuario($_GET['ref']);
+            header('Location: ../vistas/usuario.php');
+        break;
         
     }
 
