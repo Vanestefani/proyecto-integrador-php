@@ -91,7 +91,7 @@ if($varsesion==NULL || $varsesion = ''){
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">EDITAR USUARIO</h1>
-                        <form action="usuario.php" method="POST" enctype="multipart/form-data">
+                        <form action="../controlador/controlador.php?a=editarusu" method="POST" enctype="multipart/form-data">
                             <table class="table table-borderless">
                                 <tbody>
                                     <tr>

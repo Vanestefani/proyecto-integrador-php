@@ -35,5 +35,19 @@ class daoRegistroUsuario {
         $con->cerrarConexion();
         return $cont[0];
     }
-    
+    public static function editardato ($p){
+        $con = new claseConexion();
+        $sql = "UPDATE `usuario` SET "
+                . "`idUsuario`='".$p->getIdUsuario()."',"
+                . "`nombre`='".$p->getNombre()."',"
+                . "`celular`='".$p->getCelular()."',"
+                . "`email`='".$p->getEmail()."',"
+                . "`password`='".$p->getPassword()."',"
+                . "`fecha_creacion`='0',"
+                . "`privilegio`='".$p->getPrivilegio()."',"
+                . "`foto`='0',"
+                . "`verificacion`='0',"
+                . "`modo`='0' "
+                . "WHERE idUsuario='".$p->getIdUsuario()."'";
+    }
 }

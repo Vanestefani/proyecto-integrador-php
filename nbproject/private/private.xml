@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/controlador/controlador.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/vistas/usuario.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/chat/chat2/index.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/chat/chat2/db.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-integrador-php/vistas/inmueble.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/vistas/vistaEditarUsuario.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/modelo/daoRegistroUsuario.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/vistas/charts.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/modelo/claseRegistroUsuario.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/modelo/claseConexion.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-integrador-php/chat/chat2/chat.php</file>
         </group>
     </open-files>
 </project-private>

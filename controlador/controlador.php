@@ -113,6 +113,17 @@
             header("Location: ../vistas/vistaProductos.php");
         break;
     
+        case 'editarusu':
+            $p = new claseRegistroUsuario();
+            $p->setIdUsuario($_POST['id']);
+            $p->setNombre($_POST['nombre']);
+            $p->setCelular($_POST['celular']);
+            $p->setEmail($_POST['email']);
+            $p->setPassword($_POST['pass']);
+            $p->setPrivilegio($_POST['privilegio']);
+            daoRegistroUsuario::editardato($p);
+            header("Location: ../vistas/usuario.php");
+        break;
         
     }
 
