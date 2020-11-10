@@ -4,7 +4,7 @@
 <html>
 <head>
 
-	<title> chat con php</title>
+	<title>CHAT</title>
         <link rel="stylesheet" type="text/css" href="estilos.css">
         <link href = "https://fonts.googleapis.com/css2? family = Mukta + Vaani: wght @ 200 & display = swap" rel = "stylesheet">
         <script type="text/javascript">

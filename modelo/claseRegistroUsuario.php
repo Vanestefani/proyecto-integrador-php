@@ -3,6 +3,7 @@
 
 class claseRegistroUsuario {
     
+    private $idUsuario;
     private $nombre;
     private $celular;
     private $email;
@@ -16,6 +17,10 @@ class claseRegistroUsuario {
         
     }
     
+    function getIdUsuario() {
+        return $this->idUsuario;
+    }
+
     function getNombre() {
         return $this->nombre;
     }
@@ -46,6 +51,10 @@ class claseRegistroUsuario {
 
     function getModo() {
         return $this->modo;
+    }
+
+    function setIdUsuario($idUsuario) {
+        $this->idUsuario = $idUsuario;
     }
 
     function setNombre($nombre) {

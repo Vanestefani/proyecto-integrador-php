@@ -138,7 +138,7 @@ if($varsesion==NULL || $varsesion = ''){
 
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-outline-success">Contactar</button>
+                                                    <a type="button" class="btn btn-outline-success" href="../chat/chat2/index.php">CONTACTAR</a>
                                                 </td>
                                                 <td>
                                                     <button class="btn btn-outline-info">Editar</button>
