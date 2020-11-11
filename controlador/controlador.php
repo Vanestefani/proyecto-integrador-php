@@ -89,7 +89,24 @@
             header('Location: ../vistas/inmueble.php');
             break;
 
-        case 'editarInmueble':
+        case 'editarusu':
+            $p = new claseRegistroUsuario();
+            $p->setIdUsuario($_POST['id']);
+            $p->setNombre($_POST['nombre']);
+            $p->setCelular($_POST['celular']);
+            $p->setEmail($_POST['email']);
+            $p->setPassword($_POST['pass']);
+            $p->setPrivilegio($_POST['privilegio']);
+            daoRegistroUsuario::editardato($p);
+            header("Location: ../vistas/usuario.php");
+        break;
+    
+        case 'eliminarusu':
+            daoRegistroUsuario::eliminarUsuario($_GET['ref']);
+            header('Location: ../vistas/usuario.php');
+        break;
+        
+     case 'editarInmueble':
             $p=new claseRegistroInmueble();
             $p->setIdInmueble($_POST['Id']);
             $p->setTipoInmueble($_POST['inmueble']);
@@ -110,25 +127,12 @@
             $p->setFoto($_POST['foto']);
             
             daoRegistroInmueble::EditarDatos($p);
-            header("Location: ../vistas/vistaProductos.php");
+            header("Location: ../vistas/inmueble.php");
         break;
     
-        case 'editarusu':
-            $p = new claseRegistroUsuario();
-            $p->setIdUsuario($_POST['id']);
-            $p->setNombre($_POST['nombre']);
-            $p->setCelular($_POST['celular']);
-            $p->setEmail($_POST['email']);
-            $p->setPassword($_POST['pass']);
-            $p->setPrivilegio($_POST['privilegio']);
-            daoRegistroUsuario::editardato($p);
-            header("Location: ../vistas/usuario.php");
+    case 'eliminarInmueble':
+        daoRegistroInmueble::EliminarInmueble($_GET['ref']);
+        header('Location: ../vistas/inmueble.php');
         break;
-    
-        case 'eliminarusu':
-            daoRegistroUsuario::eliminarUsuario($_GET['ref']);
-            header('Location: ../vistas/usuario.php');
-        break;
-        
     }
 

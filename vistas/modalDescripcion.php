@@ -34,7 +34,8 @@
                         </table>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-success" data-dismiss="modal">Contactar</button>
+                        <a type="button" class="btn btn-success" href="../chat/chat2/index.php">Contactar</a>
+                      
                       <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
                     </div>
                   </div>

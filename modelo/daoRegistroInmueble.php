@@ -64,4 +64,36 @@ class daoRegistroInmueble {
         $con->ejecutarActualizacion($sql);
         $con->cerrarConexion();
     }
+    
+    public static function buscarPorReferencia($ref){
+        $con = new claseConexion();
+        $sql="SELECT * FROM `inmueble` WHERE idInmueble ='$ref'";
+        $cont=$con->ejecutarConsulta($sql);
+        $con->cerrarConexion();
+        return $cont[0];
+    }
+    public static function editarDato($p){
+        $con = new claseConexion();
+        $sql = "UPDATE `inmueble` SET "
+                . "`idInmueble`='".$p->getIdInmueble()."',"
+                . "`tipo_inmueble`='".$p->getTipoInmueble()."',"
+                . "`tipo_operacion`='".$p->getTipoOperacion()."',"
+                . "`amueblado`='".$p->getAmueblado()."',"
+                . "`habitaciones`='".$p->getHabitaciones()."',"
+                . "`baños`='".$p->getBaños()."',"
+                . "`metro_Cuadrado`='".$p->getMetroCuadrado()."',"
+                . "`antiguedad`='".$p->getAntiguedad()."',"
+                . "`estrato`='".$p->getEstrato()."',"
+                . "`parqueadero`='".$p->getParqueadero()."',"
+                . "`administracion`='".$p->getAdministracion()."',"
+                . "`pisos`='".$p->getPisos()."',"
+                . "`titulo_Anuncio`='".$p->getTituloAnuncion()."',"
+                . "`descripcion`='".$p->getDescripcion()."',"
+                . "`ubicacion`='".$p->getUbicacion()."',"
+                . "`precio`='".$p->getPrecio()."',"
+                . "`foto`='',"
+                . "`propietario_id`='' "
+                . "WHERE idUsuario= '".$p->getIdInmueble()."'";
+    }
+    
 }

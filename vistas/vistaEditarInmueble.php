@@ -1,8 +1,7 @@
 <?php
-require_once '../modelo/claseRegistroUsuario.php';
-require_once '../modelo/daoRegistroUsuario.php';
 require_once '../modelo/daoRegistroInmueble.php';
 require_once '../modelo/claseRegistroInmueble.php';
+$ref = daoRegistroInmueble::buscarPorReferencia($_GET['ref']);
 session_start();
 $usu = $_SESSION['user'];
 if(!isset($usu)){
@@ -86,73 +85,89 @@ if($varsesion==NULL || $varsesion = ''){
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">INMUEBLES</h1>
+                        <h1 class="mt-4">EDITAR INMUEBLES</h1>
+                        
+                        <form action="../controlador/controlador.php?a=editarInmueble" method="POST" enctype="multipart/form-data">
+                            <table class="table ">
+                                <tbody>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td><input type="text" name="id" size="15" value="<?=$ref[0]?>" readonly="readonly"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>INMUEBLE</td>
+                                        <td><input type="text" name="nombre" size="15" value="<?=$ref[1]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>OPERACION</td>
+                                        <td><input type="text" name="celular" size="15" value="<?=$ref[2]?>" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>AMUEBLADO</td>
+                                        <td><input type="text" name="email" size="15" value="<?=$ref[3]?>" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>HABITACIONES</td>
+                                        <td><input type="text" name="pass" size="15" value="<?=$ref[4]?>" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>BAÑOS</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[5]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>METRO CUADRADO</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[6]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ANTIGUEDAD</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[7]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ESTRATO</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[8]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PARQUEADERO</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[9]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ADMINISTRACION</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[10]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PISOS</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[11]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TITULO</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[12]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DESCRIPCION</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[13]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>UBICACION</td>
+                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[14]?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PRECIO</td>
+                                        <td><input type="number" name="privilegio" size="15" value="<?=$ref[15]?>"></td>
+                                    </tr>
+                                    
+                                    <br>
+                                    <br>
+                                    <tr>
+                                        <td><input type="submit" value="Actualizar" type="button" class="btn btn-primary"></td>
+                                        <td><a href="inmueble.php" type="button" class="btn btn-danger">Cerrar</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
                         
                        
-                        <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
-              AGREGAR INMUEBLE
-            </button>
-      <?php include_once '../vistas/registroVenta.php';?></div>
-                        <br>
-                       
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                INMUEBLE
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>INMUEBLE</th>
-                                                <th>OPERACION</th>
-                                                <th>ANUNCIO</th>
-                                                <th>UBICACION</th>
-                                                <th>PRECIO</th>
-                                                <th>DESCRIPCION</th>
-                                                <th>CONTACTAR</th>
-                                                <th>EDITAR</th>
-                                                <th>ELIMINAR</th>
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody>
-                                             <?php foreach (daoRegistroInmueble::listarinmueble() as $fila): ?>
-                                            <tr>
-                                                <td><?=$fila[0]?></td>
-                                                <td><?=$fila[1]?></td>
-                                                <td><?=$fila[12]?></td>
-                                                <td><?=$fila[14]?></td>
-                                                <td><?=$fila[13]?></td>
-                                                <td><?=$fila[15]?></td>
-                                                <td>
-                                                    <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modaldes">
-                                                  Descripcion
-                                                </button>
-
-                                                <!-- Modal -->
-                                                <?php include_once '../vistas/modalDescripcion.php';?>
-
-                                                </td>
-                                                <td>
-                                                    <a type="button" class="btn btn-outline-success" href="../chat/chat2/index.php">Contactar</a>
-                                                </td>
-                                                <td>
-                                                    <a type="button" class="btn btn-outline-secondary" href="vistaEditarInmueble.php?ref=<?=$fila[0]?>" >Editar</a>
-                                                </td>
-                                                <td>
-                                                    <a type="button" class="btn btn-outline-danger" href="../controlador/controlador.php?a=eliminarInmueble&ref=<?=$fila[0]?>">Eliminar</a>
-                                                </td>
-                                            </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
                         
                     </div>
                     
