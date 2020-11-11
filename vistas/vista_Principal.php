@@ -3,6 +3,7 @@ require_once '../modelo/claseRegistroUsuario.php';
 require_once '../modelo/daoRegistroUsuario.php';
 require_once '../modelo/daoRegistroInmueble.php';
 require_once '../modelo/claseRegistroInmueble.php';
+require_once '../vistas/sesiones.php';
 session_start();
 $usu = $_SESSION['user'];
 if(!isset($usu)){
@@ -55,12 +56,13 @@ if($varsesion==NULL || $varsesion = ''){
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 PRINCIPAL
                             </a>
+                            <?php if ($pr==1) {?>
                             <div class="sb-sidenav-menu-heading">GRAFICOS</div>
                             <a class="nav-link collapsed" href="charts.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 GRAFICO
-                               
                             </a>
+                            <?php } ?> 
                              <div class="sb-sidenav-menu-heading">USUARIOS</div>
                             
                             
@@ -69,10 +71,13 @@ if($varsesion==NULL || $varsesion = ''){
                                 INMUEBLES   
                                
                             </a>
+                             <?php if ($pr==1) {?>
+                                 
+                             
                             <a class="nav-link collapsed" href="usuario.php"    >
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 USUARIOS
-                               
+                             <?php } ?>  
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">

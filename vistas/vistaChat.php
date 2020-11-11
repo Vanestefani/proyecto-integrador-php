@@ -3,7 +3,6 @@ require_once '../modelo/claseRegistroUsuario.php';
 require_once '../modelo/daoRegistroUsuario.php';
 require_once '../modelo/daoRegistroInmueble.php';
 require_once '../modelo/claseRegistroInmueble.php';
-require_once '../vistas/sesiones.php';
 session_start();
 $usu = $_SESSION['user'];
 if(!isset($usu)){
@@ -15,7 +14,6 @@ if($varsesion==NULL || $varsesion = ''){
     echo 'usted no tiene autorizacion';
     die();
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +23,7 @@ if($varsesion==NULL || $varsesion = ''){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>INMUEBLES</title>
+        <title>PRINCIPAL</title>
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -38,7 +36,13 @@ if($varsesion==NULL || $varsesion = ''){
             
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                <a href="../controlador/controlador.php?a=salir"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
+                <li class="nav-item dropdown">
+                    
+                    
+                        
+                        <a href="../controlador/controlador.php?a=salir"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>
+                    
+                </li>
             </ul>
         </nav>
         <div id="layoutSidenav">
@@ -51,14 +55,12 @@ if($varsesion==NULL || $varsesion = ''){
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 PRINCIPAL
                             </a>
-                            <?php if ($pr==1) {?>
                             <div class="sb-sidenav-menu-heading">GRAFICOS</div>
                             <a class="nav-link collapsed" href="charts.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 GRAFICO
                                
                             </a>
-                            <?php } ?> 
                              <div class="sb-sidenav-menu-heading">USUARIOS</div>
                             
                             
@@ -67,13 +69,11 @@ if($varsesion==NULL || $varsesion = ''){
                                 INMUEBLES   
                                
                             </a>
-                             <?php if ($pr==1) {?>
                             <a class="nav-link collapsed" href="usuario.php"    >
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 USUARIOS
                                
                             </a>
-                              <?php } ?> 
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 
@@ -92,77 +92,9 @@ if($varsesion==NULL || $varsesion = ''){
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">INMUEBLES</h1>
-                        
-                       
-                        <div><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#exampleModal">
-              AGREGAR INMUEBLE
-            </button>
-      <?php include_once '../vistas/registroVenta.php';?></div>
+                        <h1 class="mt-4">PRINCIPAL</h1>
                         <br>
-                       
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                INMUEBLE
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>INMUEBLE</th>
-                                                <th>OPERACION</th>
-                                                <th>ANUNCIO</th>
-                                                <th>UBICACION</th>
-                                                <th>PRECIO</th>
-                                                <th>DESCRIPCION</th>
-                                                <th>CONTACTAR</th>
-                                                <?php if ($pr==1) {?>
-                                                <th>EDITAR</th>
-                                                <th>ELIMINAR</th>
-                                                <?php }?>
-                                            </tr>
-                                        </thead>
-                                        
-                                        <tbody>
-                                             <?php foreach (daoRegistroInmueble::listarinmueble() as $fila): ?>
-                                            <tr>
-                                                <td><?=$fila[0]?></td>
-                                                <td><?=$fila[1]?></td>
-                                                <td><?=$fila[12]?></td>
-                                                <td><?=$fila[14]?></td>
-                                                <td><?=$fila[13]?></td>
-                                                <td><?=$fila[15]?></td>
-                                                <td>
-                                                    <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modaldes">
-                                                  Descripcion
-                                                </button>
-
-                                                <!-- Modal -->
-                                                <?php include_once '../vistas/modalDescripcion.php';?>
-
-                                                </td>
-                                                <td>
-                                                    <a type="button" class="btn btn-outline-success" href="../chat/chat2/index.php">Contactar</a>
-                                                </td>
-                                                <?php if ($pr==1) {?>
-                                                <td>
-                                                    <a type="button" class="btn btn-outline-secondary" href="vistaEditarInmueble.php?ref=<?=$fila[0]?>" >Editar</a>
-                                                </td>
-                                                <td>
-                                                    <a type="button" class="btn btn-outline-danger" href="../controlador/controlador.php?a=eliminarInmueble&ref=<?=$fila[0]?>">Eliminar</a>
-                                                </td>
-                                                <?php } ?>
-                                            </tr>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        <h2>Bienvenid@ : <?php echo $usu; ?> </h2>
                         
                     </div>
                     
