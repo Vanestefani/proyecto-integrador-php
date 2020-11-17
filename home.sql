@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2020 a las 18:52:34
+-- Tiempo de generación: 14-11-2020 a las 13:57:14
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.8
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `home`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `chat`
+--
+
+CREATE TABLE `chat` (
+  `Id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `mensaje` varchar(255) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -53,9 +66,10 @@ CREATE TABLE `inmueble` (
 --
 
 INSERT INTO `inmueble` (`idInmueble`, `tipo_inmueble`, `tipo_operacion`, `amueblado`, `habitaciones`, `baños`, `metro_Cuadrado`, `antiguedad`, `estrato`, `parqueadero`, `administracion`, `pisos`, `titulo_Anuncio`, `descripcion`, `ubicacion`, `precio`, `foto`, `propietario_id`) VALUES
-(1, 'casa', 'arriendo', 'no', 4, 4, '30 metros', '30 años ', 6, 'no', 'no', 6, 'cara en los altos', 'casa con desague', 'cra 151 f # 147 97', '150 millones', '', 1),
-(2, 'casa', 'arriendo', 'no', 4, 3, '30 metros', '8 años', 4, 'si', 'si', 3, 'casa 3 pisoso', ' casa en buen estado ', 'cras las caracas ', '150 millones', '', 1),
-(3, 'casa', 'arriendo', 'si', 1, 1, 'd', 'd', 1, 'no', 'no', 1, 's', 'd', 'd', 'd', '', 1);
+(1, 'casa', 'apartamento', 'si', 5, 2, '30 metros', '6 años', 4, 'si', 'si', 4, 'casa en los altos', 'hola', 'hola', '150 millones', NULL, 0),
+(14, 'apartamento', 'venta', 'si', 1, 1, '30', '30', 1, 'no', 'no', 1, 'hola', 'hola', 'hola1', '2055', '', 0),
+(17, 'apartamento', 'venta', 'si', 1, 1, '64 metros', '80 años', 1, 'no', 'no', 1, 'casa bonita', 'casa en buen estado', 'cra 131 x#147 x -95', '160 millones', '', 0),
+(18, 'casa', 'arriendo', 'no', 7, 5, '90 metros', '69 años', 5, 'si', 'no', 5, 'casa de los pinos', 'casa esta en buen estado', 'cra 147 m # - 149 -98', '47 millones', '', 0);
 
 -- --------------------------------------------------------
 
@@ -115,13 +129,19 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `celular`, `email`, `password`, `fecha_creacion`, `privilegio`, `foto`, `verificacion`, `modo`) VALUES
 (1, 'jose', '3134885522', 'ro@gmail.com', '123', '0000-00-00', 1, '', 0, ''),
 (2, 'usuario1', '3138441121', 'ro@gamail.com', '987', '0000-00-00', 2, '', 0, ''),
-(11, 'dora ', '3138455086', 'dora@gamil.com', '981115', '0000-00-00', 2, '', 0, ''),
-(12, 'josue', '31278869877', 'josue@gmail.com', '981115', '0000-00-00', 2, '', 0, ''),
-(13, 'vanesa ', '3138455079', 'vanesa@gmail.es', '987', '0000-00-00', 2, '', 0, '');
+(22, 'angela ', '3138445566', 'angela@gmail.com', '123', '0000-00-00', 2, '', 0, ''),
+(23, 'lorena ', '3137881945', 'LORE@gmail.com', '123', '0000-00-00', 2, '', 0, ''),
+(27, 'manuel', '3136558877', 'ro@gmail.com', '123', '0000-00-00', 2, '', 0, '');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `inmueble`
@@ -156,10 +176,16 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+
+--
 -- AUTO_INCREMENT de la tabla `inmueble`
 --
 ALTER TABLE `inmueble`
-  MODIFY `idInmueble` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idInmueble` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `mensaje`
@@ -177,17 +203,11 @@ ALTER TABLE `notificaciones`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `inmueble`
---
-ALTER TABLE `inmueble`
-  ADD CONSTRAINT `inmueble_ibfk_1` FOREIGN KEY (`propietario_id`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `mensaje`
