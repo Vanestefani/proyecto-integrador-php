@@ -1,20 +1,9 @@
 <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
-                    <div class="filter-widget">
-                        <h4 class="fw-title">CATEGORIAS</h4>
-                        <ul class="filter-catagories">
-                            <li><a href="#">CASAS - VENTA</a></li>
-                            <li><a href="#">CASAR - ARRIENDO</a></li>
-                            <li><a href="#">APARTAMENTOS - VENTA</a></li>
-                            <li><a href="#">APARTAMENTOS - ARRIENDO</a></li>
-
-
-
-                        </ul>
-                    </div>
+                    
                     <br>
                     <div class="filter-widget">
                         <h4 class="fw-title">OTRAS TIENDAS</h4>
-                        <ul class="filter-catagories">
+                        <ul class="">
                             <li><a href="https://colombia.inmobiliaria.com/">INMOVILIARIA.COM</a></li>
                             <li><a href="https://wasi.co/">WASI.COM</a></li>
                             <li><a href="https://www.olx.com.co/apartamentos-casas-venta_c367">OLX</a></li>

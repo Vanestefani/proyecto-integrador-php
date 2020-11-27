@@ -18,7 +18,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <textarea placeholder="Mensaje"></textarea>
-                                        <button type="submit" class="site-btn">ENVIAR</button>
+                                        <button type="submit" class="btn primary-btn">ENVIAR</button>
                                     </div>
                                 </div>
                             </form>

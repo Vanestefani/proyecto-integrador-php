@@ -32,10 +32,10 @@ if($varsesion==NULL || $varsesion = ''){
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">HOME.COM</a>
+            <a class="navbar-brand" href="index.php">HOME.COM</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
-            
+            <h3 class="navbar-brand">HOME.COLOMBIA@GMAIL.COM / CONTACTENOS:3138455086</h3>
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <a href="../controlador/controlador.php?a=salir"><button  type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="left">Cerrar Sesion</button></a>

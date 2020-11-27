@@ -37,7 +37,7 @@
     <div class="container text-center">
       <nav class="nav-menu mobile-menu">
         <ul>
-          <li class="active"><a href="./index.php">INICIO</a></li>
+          <li><a href="./index.php">INICIO</a></li>
           <li><a href="./inmuebles.php">INMUEBLES</a></li>
           <li><a href="./noticias.php">NOTICIAS</a></li>
           <li><a href="./contact.php">CONTACTENOS</a></li>

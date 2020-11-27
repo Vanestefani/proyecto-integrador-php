@@ -114,10 +114,7 @@ if($varsesion==NULL || $varsesion = ''){
                                         <td>pass</td>
                                         <td><input type="text" name="pass" size="15" value="<?=$ref[4]?>" ></td>
                                     </tr>
-                                    <tr>
-                                        <td>PRIVILEGIO</td>
-                                        <td><input type="text" name="privilegio" size="15" value="<?=$ref[6]?>"></td>
-                                    </tr>
+                                    
                                     <br>
                                     <br>
                                     <tr>

@@ -17,12 +17,12 @@
               <div class="latest-text">
                 <div class="tag-list">
                   <div class="tag-item">
-                    <i class="fa fa-calendar-o"></i>
-                    May 4,2019
+                    
+                   
                   </div>
                   <div class="tag-item">
-                    <i class="fa fa-comment-o"></i>
-                    5
+                    
+                    
                   </div>
                 </div>
                 <a
@@ -30,7 +30,7 @@
                 >
                   <h4>El más importante evento virtual para hogares reales</h4>
                 </a>
-                <p>
+                  <p class="">
                   Una de las mejores noticias que han recibido los colombianos
                   en todo este tiempo de aislamiento ha sido la reactivación de
                   la construcción.
@@ -47,12 +47,10 @@
               <div class="latest-text">
                 <div class="tag-list">
                   <div class="tag-item">
-                    <i class="fa fa-calendar-o"></i>
-                    May 4,2019
+                    
                   </div>
                   <div class="tag-item">
-                    <i class="fa fa-comment-o"></i>
-                    5
+                    
                   </div>
                 </div>
                 <a
@@ -82,12 +80,10 @@
               <div class="latest-text">
                 <div class="tag-list">
                   <div class="tag-item">
-                    <i class="fa fa-calendar-o"></i>
-                    May 4,2019
+                   
                   </div>
                   <div class="tag-item">
-                    <i class="fa fa-comment-o"></i>
-                    5
+                    
                   </div>
                 </div>
                 <a

@@ -46,9 +46,9 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	color: #132743;
+	color: #FFFFFF;
 	font-weight: 400;
-	font-family: "Muli", sans-serif;
+	font-family: "Muli";
 }
 
 h1 {
@@ -77,8 +77,8 @@ h6 {
 
 p {
 	font-size: 16px;
-	font-family: "Muli", sans-serif;
-	color: #f8efd4;
+	font-family: "Muli" ;
+	color: #000000;
 	font-weight: 400;
 	line-height: 26px;
 	margin: 0 0 15px 0;
@@ -99,7 +99,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #f8efd4;
+	color: #000000;
 }
 
 ul,
@@ -120,13 +120,13 @@ ol {
 .section-title .product-price {
 	font-size: 24px;
 	font-weight: 700;
-	color: #edc988;
+	color: #000000;
 }
 
 .section-title .product-price span {
 	font-size: 16px;
 	font-weight: 400;
-	color: #f8efd4;
+	color: #000000;
 }
 
 .section-title h2 {
@@ -150,7 +150,7 @@ ol {
 }
 
 .section-title p {
-	color: #6e6e6e;
+	color: #000000;
 }
 
 .set-bg {
@@ -184,7 +184,7 @@ ol {
 	font-size: 14px;
 	font-weight: 700;
 	padding: 12px 30px;
-	color: #f8efd4f8efd4;
+	color: #000000;
 	background: #edc988;
 	text-transform: uppercase;
 }

@@ -25,7 +25,7 @@ if($varsesion==NULL || $varsesion = ''){
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">HOME.COM</a>
+            <a class="navbar-brand" href="index.php">HOME.COM</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
            
